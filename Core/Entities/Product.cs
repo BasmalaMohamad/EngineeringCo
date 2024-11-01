@@ -14,6 +14,7 @@ namespace Core.Entities
         [Key]
         public int ProductID { get; set; }
         public string ProductName { get; set; }
+        public string Model { get; set; }
         public string ImageURL { get; set; }
         public float FlowRateIPM { get; set; }
         public float FlowRateGPM { get; set; }
