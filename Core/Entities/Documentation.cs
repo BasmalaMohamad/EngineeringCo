@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Core.Entities
@@ -14,9 +15,7 @@ namespace Core.Entities
         public int DocumentID { get; set; }
         [ForeignKey("Product")]
         public int ProductID { get; set; }
-        public string DocumentType { get; set; }
         public string FileURL { get; set; }
-        public string Description { get; set; }
         public Product Product { get; set; }
     }
 }
