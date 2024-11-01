@@ -1,4 +1,5 @@
 
+using Core.Interfaces;
 using Infrastructrue.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -21,7 +22,9 @@ namespace API
             builder.Services.AddDbContext<StoreContext>(opt =>
             {
                 opt.UseSqlServer(connectionString);
-            });
+            }, ServiceLifetime.Scoped);
+
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
             var app = builder.Build();
 
