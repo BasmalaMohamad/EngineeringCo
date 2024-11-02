@@ -99,6 +99,9 @@ namespace Infrastructrue.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductID"));
 
+                    b.Property<float>("AirInletSize")
+                        .HasColumnType("real");
+
                     b.Property<string>("Construction")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -113,27 +116,17 @@ namespace Infrastructrue.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("InletSizeInch")
-                        .HasColumnType("real");
-
-                    b.Property<float>("InletSizeMM")
+                    b.Property<float>("InletSize")
                         .HasColumnType("real");
 
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("OutletSizeInch")
-                        .HasColumnType("real");
-
-                    b.Property<float>("OutletSizeMM")
+                    b.Property<float>("OutletSize")
                         .HasColumnType("real");
 
                     b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
