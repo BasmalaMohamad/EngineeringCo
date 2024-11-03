@@ -38,14 +38,7 @@ namespace API.Controllers
             return Ok(product);
         }
 
-        [HttpGet("document")]
-        public async Task<ActionResult<Documentation>> GetDocumentById(int id)
-        {
-            var product = await _productRepository.GetProductByIdAsync(id);
-
-            return Ok(product);
-        }
-
+        
 
     }
 }
