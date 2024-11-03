@@ -20,6 +20,10 @@ namespace Infrastructrue.Data
         {
             return await _storeContext.Products.FindAsync(id);
         }
+        public async Task<Documentation> GetDocByIdAsync(int id)
+        {
+            return await _storeContext.Documentations.FindAsync(id);
+        }
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {

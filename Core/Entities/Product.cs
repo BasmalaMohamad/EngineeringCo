@@ -24,7 +24,9 @@ namespace Core.Entities
 
         public float OutletSize { get; set; }
         public string Construction { get; set; }
+     
         
-        public Documentation Documentation { get; set; }
+        public Documentation Documentation { get; set; } = null!;
+
     }
 }
