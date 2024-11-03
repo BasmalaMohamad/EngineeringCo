@@ -31,14 +31,24 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProductById(int id)
-        {
-            var product = await _productRepository.GetProductByIdAsync(id);
+        //public async Task<ActionResult<Product>> GetProductById(int id)
+        //{
+        //    var product = await _productRepository.GetProductByIdAsync(id);
                                             
-            return Ok(product);
+        //    return Ok(product);
+        //}
+        
+        public async Task<ActionResult<Documentation>> GetDocById(int id)
+        {
+            var doc = await _productRepository.GetDocByIdAsync(id);
+
+            return Ok(doc);
         }
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> 96a022a0f166661176d807174d03e625b369fba7
 
     }
 }

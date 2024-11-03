@@ -18,12 +18,15 @@ namespace Core.Entities
         public string ImageURL { get; set; }
         public float FlowRateIPM { get; set; }
         public float FlowRateGPM { get; set; }
-        public float InletSizeMM { get; set; }
-        public float InletSizeInch { get; set; }
-        public float OutletSizeMM { get; set; }
-        public float OutletSizeInch { get; set; }
+       
+        public float AirInletSize { get; set; }
+        public float InletSize { get; set; }
+
+        public float OutletSize { get; set; }
         public string Construction { get; set; }
-        public string Type { get; set; }
-        public Documentation Documentation { get; set; }
+     
+        
+        public Documentation Documentation { get; set; } = null!;
+
     }
 }
