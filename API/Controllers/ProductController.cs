@@ -1,31 +1,4 @@
-﻿/*using Core.Entities;
-using Infrastructrue.Data;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-
-namespace API.Controllers
-{
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductController : ControllerBase
-    {
-        public readonly StoreContext storeContext;
-        public ProductController(StoreContext _storeContext)
-        {
-            _storeContext = _storeContext ?? throw new ArgumentNullException(nameof(storeContext));
-        }
-        
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Product?>> getData(int id)
-        {
-            var p = await storeContext.Products.Where(c => c.ProductID == id).FirstOrDefaultAsync();
-            return Ok(p);
-        }
-    }
-}
-*/
+﻿using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using Infrastructrue.Data;
@@ -40,12 +13,15 @@ namespace API.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductRepository _productRepository;
+        private readonly IMapper _mapper;
 
         // Constructor for dependency injection
-        public ProductController(IProductRepository productRepository)
+        public ProductController(IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository;
+            _mapper = mapper;
         }
+
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
@@ -61,5 +37,15 @@ namespace API.Controllers
                                             
             return Ok(product);
         }
+
+        [HttpGet("document")]
+        public async Task<ActionResult<Documentation>> GetDocumentById(int id)
+        {
+            var product = await _productRepository.GetProductByIdAsync(id);
+
+            return Ok(product);
+        }
+
+
     }
 }

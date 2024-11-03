@@ -19,12 +19,18 @@ namespace API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            // Specify DBContext with Connection String
             builder.Services.AddDbContext<StoreContext>(opt =>
             {
                 opt.UseSqlServer(connectionString);
             }, ServiceLifetime.Scoped);
 
+            // Apply DI
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            
+            // Adding AutoMapper
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
 
@@ -39,6 +45,8 @@ namespace API
 
 
             app.MapControllers();
+
+            app.UseStaticFiles();
 
             app.Run();
         }
