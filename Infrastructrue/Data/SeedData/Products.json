@@ -1,6 +1,5 @@
 ﻿[
   {
-    "ProductID": 1,
     "ProductName": "ولدن",
     "Model": " P.025",
     "ImageURL": "/Images/Pumps/1.jpg",
@@ -12,7 +11,6 @@
     "Construction": "بولي بروبلين"
   },
   {
-    "ProductID": 2,
     "ProductName": "ولدن",
     "Model": " P1",
     "ImageURL": "/Images/Pumps/2.jpg",
@@ -24,7 +22,6 @@
     "Construction": "بولي بروبلين"
   },
   {
-    "ProductID": 3,
     "ProductName": "ولدن",
     "Model": " R250",
     "ImageURL": "/Images/Pumps/3.jpg",
@@ -36,7 +33,6 @@
     "Construction": "الومنيوم"
   },
   {
-    "ProductID": 4,
     "ProductName": "ولدن",
     "Model": " P220",
     "ImageURL": "/Images/Pumps/4.jpg",
@@ -48,7 +44,6 @@
     "Construction": "الومنيوم"
   },
   {
-    "ProductID": 5,
     "ProductName": "ولدن",
     "Model": " P200",
     "ImageURL": "/Images/Pumps/5.jpg",
@@ -60,7 +55,6 @@
     "Construction": "بولي بروبلين"
   },
   {
-    "ProductID": 6,
     "ProductName": "ولدن",
     "Model": " P220",
     "ImageURL": "/Images/Pumps/6.jpg",
@@ -72,7 +66,6 @@
     "Construction": "استانلس ستيل"
   },
   {
-    "ProductID": 7,
     "ProductName": "ولدن",
     "Model": " P400",
     "ImageURL": "/Images/Pumps/7.jpg",
@@ -84,7 +77,6 @@
     "Construction": "بولي بروبلين"
   },
   {
-    "ProductID": 8,
     "ProductName": "ولدن",
     "Model": " PS4",
     "ImageURL": "/Images/Pumps/8.jpg",
@@ -94,10 +86,9 @@
     "InletSize": 1.5,
     "OutletSize": 1.25,
     "Construction": "الومنيوم"
-    
+
   },
   {
-    "ProductID": 9,
     "ProductName": "ولدن",
     "Model": " P800",
     "ImageURL": "/Images/Pumps/9.jpg",
@@ -107,10 +98,9 @@
     "InletSize": 2,
     "OutletSize": 2,
     "Construction": "بولي بروبلين"
-    
+
   },
   {
-    "ProductID": 10,
     "ProductName": "ولدن",
     "Model": " XPS8",
     "ImageURL": "/Images/Pumps/10.jpg",
@@ -120,10 +110,9 @@
     "InletSize": 2,
     "OutletSize": 2,
     "Construction": "الومنيوم"
- 
+
   },
   {
-    "ProductID": 11,
     "ProductName": "ولدن",
     "Model": " PS15",
     "ImageURL": "/Images/Pumps/11.jpg",
@@ -133,10 +122,9 @@
     "InletSize": 3,
     "OutletSize": 3,
     "Construction": "الومنيوم"
-    
+
   },
   {
-    "ProductID": 12,
     "ProductName": "ولدن",
     "Model": " T15",
     "ImageURL": "/Images/Pumps/12.png",
@@ -146,5 +134,6 @@
     "InletSize": 3,
     "OutletSize": 3,
     "Construction": "الومنيوم"
-    
+
   }
+]
