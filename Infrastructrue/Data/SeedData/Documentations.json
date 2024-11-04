@@ -1,60 +1,49 @@
 [
   {
-    "DocumentID": 1,
     "ProductID": 1,
     "FileURL": "/Docs/1.pdf"
 
   },
   {
-    "DocumentID": 2,
     "ProductID": 2,
     "FileURL": "/Docs/2.pdf"
 
   },
   {
-    "DocumentID": 3,
     "ProductID": 3,
     "FileURL": "/Docs/3.pdf"
 
   },
   {
-    "DocumentID": 4,
     "ProductID": 4,
     "FileURL": "/Docs/4.pdf"
   },
   {
-    "DocumentID": 5,
     "ProductID": 5,
     "FileURL": "/Docs/5.pdf"
 
   },
   {
-    "DocumentID": 6,
     "ProductID": 6,
     "FileURL": "/Docs/6.pdf"
   },
   {
-    "DocumentID": 7,
     "ProductID": 7,
     "FileURL": "/Docs/7.pdf"
   },
   {
-    "DocumentID": 8,
     "ProductID": 8,
     "FileURL": "/Docs/8.pdf"
   },
   {
-    "DocumentID": 9,
     "ProductID": 9,
     "FileURL": "/Docs/9.pdf"
   },
   {
-    "DocumentID": 10,
     "ProductID": 10,
     "FileURL": "/Docs/10.pdf"
   },
   {
-    "DocumentID": 11,
     "ProductID": 12,
     "FileURL": "/Docs/12.pdf"
 

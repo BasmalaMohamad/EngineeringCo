@@ -14,11 +14,15 @@ namespace API.Helper
             _mapper = mapper;
         }
 
-        /*public FilterOptions GenerateOptions()
+        public FilterOptions GenerateOptions()
         {
-            
+            var filterOptions = new FilterOptions()
+            {
+                ProductName = _products.Select(p => p.ProductName).ToList(),
+                Construction = _products.Select(p => p.Construction).ToList()
+            };
 
             return filterOptions;
-        }*/
+        }
     }
 }

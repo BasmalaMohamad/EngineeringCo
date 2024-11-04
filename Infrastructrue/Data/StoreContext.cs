@@ -21,11 +21,12 @@ namespace Infrastructrue.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Documentation> Documentations { get; set; }
         public DbSet<Accessories> Accessories { get; set; }
+        public DbSet<Models> Models { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            // modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
         
     }

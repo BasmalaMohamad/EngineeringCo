@@ -1,6 +1,9 @@
-﻿using AutoMapper;
+﻿using API.DTO;
+using API.Helper;
+using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specifications;
 using Infrastructrue.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,32 +26,44 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<List<ProductDTO>>> GetProducts([FromQuery] ProductSpecParams productParams)
         {
-            var products = await _productRepository.GetProductsAsync();
-            
-            return Ok(products);
+            var productWithSpecifications = await _productRepository.GetProductsWithSpecificationsAsync(productParams);
+            var filterOptions = new FilterOptionsResolver(productWithSpecifications, _mapper).GenerateOptions();
+            var paginationList = new PaginationList
+            {
+                PageSize = productParams.PageSize,
+                PageIndex = productParams.PageIndex,
+                Count = await _productRepository.CountAsync(),
+                Data = _mapper.Map<IReadOnlyList<ProductDTO>>(productWithSpecifications),
+                FilterOptions = filterOptions
+
+            };
+            return Ok(paginationList);
         }
 
         [HttpGet("{id}")]
-        //public async Task<ActionResult<Product>> GetProductById(int id)
-        //{
-        //    var product = await _productRepository.GetProductByIdAsync(id);
-                                            
-        //    return Ok(product);
-        //}
-        
-        public async Task<ActionResult<Documentation>> GetDocById(int id)
+        public async Task<ActionResult<ProductDTO>> GetProductById(int id)
         {
-            var doc = await _productRepository.GetDocByIdAsync(id);
+            var product = await _productRepository.GetProductByIdAsync(id);
+            if (product is null)
+            {
+                return NotFound();
+            }
+            var productMapped = _mapper.Map<ProductDTO>(product);
 
-            return Ok(doc);
+            return Ok(productMapped);
         }
 
-<<<<<<< HEAD
-        
-=======
->>>>>>> 96a022a0f166661176d807174d03e625b369fba7
+        [HttpGet("document")]
+        public async Task<ActionResult<DocumentDTO>> GetDocById(int id)
+        {
+            var doc = await _productRepository.GetDocByIdAsync(id);
+            var docMapped = _mapper.Map<DocumentDTO>(doc);
+
+            return Ok(docMapped);
+        }
+
 
     }
 }
