@@ -22,21 +22,20 @@ namespace Core.Specifications
         }
 
         public int? documentId { get; set; }
-        public int? modelId { get; set; }
-
-
         public string? productName { get; set; }
-        public Model? model { get; set; }
-        public string? imageURL { get; set; }
-        public float? flowRateIPM { get; set; }
-        public float? flowRateGPM { get; set; }
-
-        public float? airInletSize { get; set; }
-        public float? inletSize { get; set; }
-
-        public float? outletSize { get; set; }
+        public string? model { get; set; }
+        //public string? imageURL { get; set; }
+        public float? flowRateIPMTo { get; set; }
+        public float? flowRateIPMFrom { get; set; }
+        public float? flowRateGPMFrom { get; set; }
+        public float? flowRateGPMTo { get; set; }
+        public float? airInletSizeTo { get; set; }
+        public float? airInletSizeFrom { get; set; }
+        public float? inletSizeTo { get; set; }
+        public float? inletSizeFrom { get; set; }
+        public float? outletSizeTo { get; set; }
+        public float? outletSizeFrom { get; set; }
         public string? construction { get; set; }
-
         public string sortBy { get; set; } = SortByOptions.Name;
         public string sortDirection { get; set; } = SortByDirections.Asc;
 

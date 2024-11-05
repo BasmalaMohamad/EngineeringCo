@@ -14,7 +14,7 @@ namespace Core.Interfaces
         Task<Product> GetProductByIdAsync(int id);
         Task<Documentation> GetDocByIdAsync(int id);
         Task<int> CountAsync();
-        Task<string> GetProductNameAsync(int carId);
+        Task<string> GetProductNameAsync(int productId);
 
         Task<IReadOnlyList<Product>> GetProductsAsync();
         Task<IReadOnlyList<Product>> GetProductsWithSpecificationsAsync(ProductSpecParams productParams);

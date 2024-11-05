@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructrue.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20241104014904_CreateDB")]
-    partial class CreateDB
+    [Migration("20241105175140_m8")]
+    partial class m8
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -99,23 +99,6 @@ namespace Infrastructrue.Migrations
                     b.ToTable("Documentations");
                 });
 
-            modelBuilder.Entity("Core.Entities.Models", b =>
-                {
-                    b.Property<int>("ModelID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ModelID"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ModelID");
-
-                    b.ToTable("Models");
-                });
-
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
                     b.Property<int>("ProductID")
@@ -144,8 +127,9 @@ namespace Infrastructrue.Migrations
                     b.Property<float>("InletSize")
                         .HasColumnType("real");
 
-                    b.Property<int>("ModelId")
-                        .HasColumnType("int");
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("OutletSize")
                         .HasColumnType("real");
@@ -155,8 +139,6 @@ namespace Infrastructrue.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductID");
-
-                    b.HasIndex("ModelId");
 
                     b.ToTable("Products");
                 });
@@ -191,25 +173,9 @@ namespace Infrastructrue.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Core.Entities.Product", b =>
-                {
-                    b.HasOne("Core.Entities.Models", "Model")
-                        .WithMany("Products")
-                        .HasForeignKey("ModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Model");
-                });
-
             modelBuilder.Entity("Core.Entities.Category", b =>
                 {
                     b.Navigation("Accessories");
-                });
-
-            modelBuilder.Entity("Core.Entities.Models", b =>
-                {
-                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Core.Entities.Product", b =>

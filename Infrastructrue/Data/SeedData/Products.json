@@ -135,5 +135,29 @@
     "OutletSize": 3,
     "Construction": "الومنيوم"
 
+  },
+  {
+    "ProductName": "ارو",
+    "Model": " T15",
+    "ImageURL": "/Images/Pumps/12.png",
+    "FlowRateIPM": 878,
+    "FlowRateGPM": 232,
+    "AirInletSize": 0.75,
+    "InletSize": 3,
+    "OutletSize": 3,
+    "Construction": "الومنيوم"
+
+  },
+  {
+    "ProductName": "ساند بيبر",
+    "Model": " T15",
+    "ImageURL": "/Images/Pumps/12.png",
+    "FlowRateIPM": 878,
+    "FlowRateGPM": 232,
+    "AirInletSize": 0.75,
+    "InletSize": 3,
+    "OutletSize": 3,
+    "Construction": "الومنيوم"
+
   }
 ]

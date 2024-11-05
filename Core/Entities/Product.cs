@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Consts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,7 +15,7 @@ namespace Core.Entities
         [Key]
         public int ProductID { get; set; }
         public string ProductName { get; set; }
-        public Models Model { get; set; } = null!;
+        public string Model { get; set; } 
         public string ImageURL { get; set; }
         public float FlowRateIPM { get; set; }
         public float FlowRateGPM { get; set; }
@@ -26,8 +27,7 @@ namespace Core.Entities
         public string Construction { get; set; }
         public Documentation Documentation { get; set; } = null!;
         public virtual List<Accessories> Accessories { get; set; } = new List<Accessories>();
-        [ForeignKey("Model")]
-        public int ModelId { get; set; }
+       
 
     }
 }
