@@ -60,24 +60,20 @@ namespace Infrastructrue.Data
             
             IQueryable<Product> query = _storeContext.Products.Include(p => p.Documentation);
             query = query.Where(p =>
-      (string.IsNullOrEmpty(productParams.SearchValue))
-      //||
-      // p.ProductName.ToLower().Contains(productParams.SearchValue.ToLower()) ||
-      // p.Model.ToLower().Contains(productParams.SearchValue.ToLower()) ||
-      // p.Construction.ToLower().Contains(productParams.SearchValue.ToLower()))
+      (string.IsNullOrEmpty(productParams.SearchValue)
+      ||
+       p.ProductName.ToLower().Contains(productParams.SearchValue.ToLower()) ||
+       p.Model.ToLower().Contains(productParams.SearchValue.ToLower()) ||
+       p.Construction.ToLower().Contains(productParams.SearchValue.ToLower()))
       && (!productParams.documentId.HasValue || p.Documentation.DocumentID == productParams.documentId)
-      && (!productParams.flowRateIPMTo.HasValue || p.FlowRateIPM <= productParams.flowRateIPMTo)
-      && (!productParams.flowRateIPMFrom.HasValue || p.FlowRateIPM >= productParams.flowRateIPMFrom)
-      && (!productParams.flowRateGPMTo.HasValue || p.FlowRateGPM <= productParams.flowRateGPMTo)
-      && (!productParams.flowRateGPMFrom.HasValue || p.FlowRateGPM >= productParams.flowRateGPMFrom)
-      && (!productParams.airInletSizeTo.HasValue || p.AirInletSize <= productParams.airInletSizeTo)
-      && (!productParams.airInletSizeFrom.HasValue || p.AirInletSize >= productParams.airInletSizeFrom)
+      && (string.IsNullOrEmpty(productParams.model) || p.Model.ToLower() == productParams.model.ToLower())
+
       && (!productParams.inletSizeFrom.HasValue || p.InletSize >= productParams.inletSizeFrom)
       && (!productParams.inletSizeTo.HasValue || p.InletSize <= productParams.inletSizeTo)
       && (!productParams.outletSizeTo.HasValue || p.OutletSize <= productParams.outletSizeTo)
       && (!productParams.outletSizeFrom.HasValue || p.OutletSize >= productParams.outletSizeFrom)
       && (string.IsNullOrEmpty(productParams.construction) || p.Construction == productParams.construction)
-      && (string.IsNullOrEmpty(productParams.model) || p.Model == productParams.model)
+     
       && (string.IsNullOrEmpty(productParams.productName) || p.ProductName == productParams.productName)
   // Use ToString() for enum comparison
 
@@ -86,10 +82,6 @@ namespace Infrastructrue.Data
 
             if (productParams.sortBy.ToLower() == "name")
                 productParams.sortBy = SortByOptions.Name;
-            if (productParams.sortBy.ToLower() == "flowrate")
-                productParams.sortBy = SortByOptions.FlowRate;
-            if (productParams.sortBy.ToLower() == "airinlet")
-                productParams.sortBy = SortByOptions.Airinlet;
             if (productParams.sortBy.ToLower() == "inlet")
                 productParams.sortBy = SortByOptions.Inlet;
             if (productParams.sortBy.ToLower() == "outlet")

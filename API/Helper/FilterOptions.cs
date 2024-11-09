@@ -4,5 +4,6 @@
     {
         public List<string> ProductName { get; set; } = null!;
         public List<string> Construction { get; set; } = null!;
+        public List<string> Model { get; set; } = null!;
     }
 }

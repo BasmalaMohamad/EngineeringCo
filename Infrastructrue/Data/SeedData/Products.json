@@ -3,9 +3,6 @@
     "ProductName": "ولدن",
     "Model": " P.025",
     "ImageURL": "/Images/Pumps/1.jpg",
-    "FlowRateIPM": 18.1,
-    "FlowRateGPM": 4.8,
-    "AirInletSize": 0.125,
     "InletSize": 0.25,
     "OutletSize": 0.25,
     "Construction": "بولي بروبلين"
@@ -14,9 +11,7 @@
     "ProductName": "ولدن",
     "Model": " P1",
     "ImageURL": "/Images/Pumps/2.jpg",
-    "FlowRateIPM": 56.8,
-    "FlowRateGPM": 15,
-    "AirInletSize": 0.25,
+   
     "InletSize": 0.5,
     "OutletSize": 0.5,
     "Construction": "بولي بروبلين"
@@ -25,9 +20,7 @@
     "ProductName": "ولدن",
     "Model": " R250",
     "ImageURL": "/Images/Pumps/3.jpg",
-    "FlowRateIPM": 182,
-    "FlowRateGPM": 48,
-    "AirInletSize": 0.5,
+    
     "InletSize": 1,
     "OutletSize": 1,
     "Construction": "الومنيوم"
@@ -36,9 +29,6 @@
     "ProductName": "ولدن",
     "Model": " P220",
     "ImageURL": "/Images/Pumps/4.jpg",
-    "FlowRateIPM": 212,
-    "FlowRateGPM": 56,
-    "AirInletSize": 0.25,
     "InletSize": 1,
     "OutletSize": 1,
     "Construction": "الومنيوم"
@@ -47,9 +37,6 @@
     "ProductName": "ولدن",
     "Model": " P200",
     "ImageURL": "/Images/Pumps/5.jpg",
-    "FlowRateIPM": 220,
-    "FlowRateGPM": 58,
-    "AirInletSize": 0.25,
     "InletSize": 1,
     "OutletSize": 1,
     "Construction": "بولي بروبلين"
@@ -58,9 +45,7 @@
     "ProductName": "ولدن",
     "Model": " P220",
     "ImageURL": "/Images/Pumps/6.jpg",
-    "FlowRateIPM": 212,
-    "FlowRateGPM": 56,
-    "AirInletSize": 0.25,
+    
     "InletSize": 1,
     "OutletSize": 1,
     "Construction": "استانلس ستيل"
@@ -69,9 +54,7 @@
     "ProductName": "ولدن",
     "Model": " P400",
     "ImageURL": "/Images/Pumps/7.jpg",
-    "FlowRateIPM": 450,
-    "FlowRateGPM": 119,
-    "AirInletSize": 0.5,
+    
     "InletSize": 1.5,
     "OutletSize": 1.5,
     "Construction": "بولي بروبلين"
@@ -80,9 +63,7 @@
     "ProductName": "ولدن",
     "Model": " PS4",
     "ImageURL": "/Images/Pumps/8.jpg",
-    "FlowRateIPM": 375,
-    "FlowRateGPM": 99,
-    "AirInletSize": 0.75,
+    
     "InletSize": 1.5,
     "OutletSize": 1.25,
     "Construction": "الومنيوم"
@@ -92,9 +73,7 @@
     "ProductName": "ولدن",
     "Model": " P800",
     "ImageURL": "/Images/Pumps/9.jpg",
-    "FlowRateIPM": 624,
-    "FlowRateGPM": 165,
-    "AirInletSize": 0.5,
+    
     "InletSize": 2,
     "OutletSize": 2,
     "Construction": "بولي بروبلين"
@@ -104,9 +83,7 @@
     "ProductName": "ولدن",
     "Model": " XPS8",
     "ImageURL": "/Images/Pumps/10.jpg",
-    "FlowRateIPM": 723,
-    "FlowRateGPM": 191,
-    "AirInletSize": 0.75,
+    
     "InletSize": 2,
     "OutletSize": 2,
     "Construction": "الومنيوم"
@@ -116,9 +93,7 @@
     "ProductName": "ولدن",
     "Model": " PS15",
     "ImageURL": "/Images/Pumps/11.jpg",
-    "FlowRateIPM": 927,
-    "FlowRateGPM": 245,
-    "AirInletSize": 0.75,
+    
     "InletSize": 3,
     "OutletSize": 3,
     "Construction": "الومنيوم"
@@ -128,33 +103,6 @@
     "ProductName": "ولدن",
     "Model": " T15",
     "ImageURL": "/Images/Pumps/12.png",
-    "FlowRateIPM": 878,
-    "FlowRateGPM": 232,
-    "AirInletSize": 0.75,
-    "InletSize": 3,
-    "OutletSize": 3,
-    "Construction": "الومنيوم"
-
-  },
-  {
-    "ProductName": "ارو",
-    "Model": " T15",
-    "ImageURL": "/Images/Pumps/12.png",
-    "FlowRateIPM": 878,
-    "FlowRateGPM": 232,
-    "AirInletSize": 0.75,
-    "InletSize": 3,
-    "OutletSize": 3,
-    "Construction": "الومنيوم"
-
-  },
-  {
-    "ProductName": "ساند بيبر",
-    "Model": " T15",
-    "ImageURL": "/Images/Pumps/12.png",
-    "FlowRateIPM": 878,
-    "FlowRateGPM": 232,
-    "AirInletSize": 0.75,
     "InletSize": 3,
     "OutletSize": 3,
     "Construction": "الومنيوم"

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructrue.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20241105175140_m8")]
-    partial class m8
+    [Migration("20241106111537_m1")]
+    partial class m1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -107,18 +107,9 @@ namespace Infrastructrue.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductID"));
 
-                    b.Property<float>("AirInletSize")
-                        .HasColumnType("real");
-
                     b.Property<string>("Construction")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("FlowRateGPM")
-                        .HasColumnType("real");
-
-                    b.Property<float>("FlowRateIPM")
-                        .HasColumnType("real");
 
                     b.Property<string>("ImageURL")
                         .IsRequired()

@@ -17,12 +17,8 @@ namespace Core.Entities
         public string ProductName { get; set; }
         public string Model { get; set; } 
         public string ImageURL { get; set; }
-        public float FlowRateIPM { get; set; }
-        public float FlowRateGPM { get; set; }
-       
-        public float AirInletSize { get; set; }
+        
         public float InletSize { get; set; }
-
         public float OutletSize { get; set; }
         public string Construction { get; set; }
         public Documentation Documentation { get; set; } = null!;
