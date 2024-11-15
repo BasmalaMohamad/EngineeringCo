@@ -13,6 +13,14 @@ namespace Infrastructrue.Data
     {
         public static async Task SeedAsync(StoreContext context)
         {
+            
+            if (!context.Documentations.Any())
+            {
+                var documentationsData = File.ReadAllText("../Infrastructrue/Data/SeedData/Documentations.json");
+                var documentations = JsonSerializer.Deserialize<List<Documentation>>(documentationsData);
+                context.Documentations.AddRange(documentations);
+                await context.SaveChangesAsync();
+            }
             if (!context.Products.Any())
             {
                 var productsData = File.ReadAllText("../Infrastructrue/Data/SeedData/Products.json");
@@ -20,22 +28,14 @@ namespace Infrastructrue.Data
 
                 if (products == null)
                 {
-                    
+
                 }
                 else
                 {
                     context.Products.AddRange(products);
                     await context.SaveChangesAsync();
-                   
-                }
-            }
 
-            if (!context.Documentations.Any())
-            {
-                var documentationsData = File.ReadAllText("../Infrastructrue/Data/SeedData/Documentations.json");
-                var documentations = JsonSerializer.Deserialize<List<Documentation>>(documentationsData);
-                context.Documentations.AddRange(documentations);
-                await context.SaveChangesAsync();
+                }
             }
             if (!context.Categories.Any())
             {

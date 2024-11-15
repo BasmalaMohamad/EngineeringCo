@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructrue.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20241107225158_mm")]
-    partial class mm
+    [Migration("20241115222313_createDB")]
+    partial class createDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,6 +38,9 @@ namespace Infrastructrue.Migrations
                     b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Model")
                         .IsRequired()
@@ -67,6 +70,9 @@ namespace Infrastructrue.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -88,13 +94,10 @@ namespace Infrastructrue.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.HasKey("DocumentID");
-
-                    b.HasIndex("ProductID")
-                        .IsUnique();
 
                     b.ToTable("Documentations");
                 });
@@ -107,18 +110,12 @@ namespace Infrastructrue.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductID"));
 
-                    b.Property<float>("AirInletSize")
-                        .HasColumnType("real");
-
                     b.Property<string>("Construction")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("FlowRateGPM")
-                        .HasColumnType("real");
-
-                    b.Property<float>("FlowRateIPM")
-                        .HasColumnType("real");
+                    b.Property<int>("DocumentId")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImageURL")
                         .IsRequired()
@@ -126,6 +123,9 @@ namespace Infrastructrue.Migrations
 
                     b.Property<float>("InletSize")
                         .HasColumnType("real");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Model")
                         .IsRequired()
@@ -139,6 +139,8 @@ namespace Infrastructrue.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductID");
+
+                    b.HasIndex("DocumentId");
 
                     b.ToTable("Products");
                 });
@@ -162,15 +164,15 @@ namespace Infrastructrue.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Core.Entities.Documentation", b =>
+            modelBuilder.Entity("Core.Entities.Product", b =>
                 {
-                    b.HasOne("Core.Entities.Product", "Product")
-                        .WithOne("Documentation")
-                        .HasForeignKey("Core.Entities.Documentation", "ProductID")
+                    b.HasOne("Core.Entities.Documentation", "Documentation")
+                        .WithMany()
+                        .HasForeignKey("DocumentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
+                    b.Navigation("Documentation");
                 });
 
             modelBuilder.Entity("Core.Entities.Category", b =>
@@ -181,9 +183,6 @@ namespace Infrastructrue.Migrations
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
                     b.Navigation("Accessories");
-
-                    b.Navigation("Documentation")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

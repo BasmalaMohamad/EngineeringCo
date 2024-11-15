@@ -29,6 +29,14 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
             
 // Adding AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddCors(opt =>
+   opt.AddPolicy("CorsPolicy", policy =>
+   {
+       policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+   })
+
+);
+
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 var app = builder.Build();
 using var scope = app.Services.CreateScope();
@@ -53,6 +61,10 @@ catch (Exception ex)
 {
     logger.LogError(ex, ex.Message);
 }
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseCors("CorsPolicy");
+app.UseRouting();
 
 app.UseAuthorization();
 

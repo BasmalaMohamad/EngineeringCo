@@ -26,11 +26,11 @@ namespace Infrastructrue.Data
         }
         public async Task<Product> GetProductByIdAsync(int id)
         {
-            return await _storeContext.Products.FindAsync(id);
+            return await _storeContext.Products.Include(p => p.Documentation).FirstOrDefaultAsync(p => p.ProductID == id);
         }
         public async Task<Documentation> GetDocByIdAsync(int id)
         {
-            return await _storeContext.Documentations.Include(d => d.Product).FirstOrDefaultAsync(d => d.DocumentID == id);
+            return await _storeContext.Documentations.FirstOrDefaultAsync(d => d.DocumentID == id);
         }
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
@@ -60,24 +60,24 @@ namespace Infrastructrue.Data
             
             IQueryable<Product> query = _storeContext.Products.Include(p => p.Documentation);
             query = query.Where(p =>
-      (string.IsNullOrEmpty(productParams.SearchValue)
-      ||
-       p.ProductName.ToLower().Contains(productParams.SearchValue.ToLower()) ||
-       p.Model.ToLower().Contains(productParams.SearchValue.ToLower()) ||
-       p.Construction.ToLower().Contains(productParams.SearchValue.ToLower()))
-      && (!productParams.documentId.HasValue || p.Documentation.DocumentID == productParams.documentId)
-      && (string.IsNullOrEmpty(productParams.model) || p.Model.ToLower() == productParams.model.ToLower())
+              (string.IsNullOrEmpty(productParams.SearchValue)
+                  ||
+                   p.ProductName.ToLower().Contains(productParams.SearchValue.ToLower()) ||
+                   p.Model.ToLower().Contains(productParams.SearchValue.ToLower()) ||
+                   p.Construction.ToLower().Contains(productParams.SearchValue.ToLower()))
+                  && (!productParams.documentId.HasValue || p.Documentation.DocumentID == productParams.documentId)
+                  && (string.IsNullOrEmpty(productParams.model) || p.Model.ToLower() == productParams.model.ToLower())
 
-      && (!productParams.inletSizeFrom.HasValue || p.InletSize >= productParams.inletSizeFrom)
-      && (!productParams.inletSizeTo.HasValue || p.InletSize <= productParams.inletSizeTo)
-      && (!productParams.outletSizeTo.HasValue || p.OutletSize <= productParams.outletSizeTo)
-      && (!productParams.outletSizeFrom.HasValue || p.OutletSize >= productParams.outletSizeFrom)
-      && (string.IsNullOrEmpty(productParams.construction) || p.Construction == productParams.construction)
+                  && (!productParams.inletSizeFrom.HasValue || p.InletSize >= productParams.inletSizeFrom)
+                  && (!productParams.inletSizeTo.HasValue || p.InletSize <= productParams.inletSizeTo)
+                  && (!productParams.outletSizeTo.HasValue || p.OutletSize <= productParams.outletSizeTo)
+                  && (!productParams.outletSizeFrom.HasValue || p.OutletSize >= productParams.outletSizeFrom)
+                  && (string.IsNullOrEmpty(productParams.construction) || p.Construction == productParams.construction)
      
-      && (string.IsNullOrEmpty(productParams.productName) || p.ProductName == productParams.productName)
-  // Use ToString() for enum comparison
+                  && (string.IsNullOrEmpty(productParams.productName) || p.ProductName == productParams.productName)
+                    // Use ToString() for enum comparison
 
-  );
+                );
 
 
             if (productParams.sortBy.ToLower() == "name")

@@ -5,25 +5,26 @@
     "ImageURL": "/Images/Pumps/1.jpg",
     "InletSize": 0.25,
     "OutletSize": 0.25,
-    "Construction": "بولي بروبلين"
+    "Construction": "بولي بروبلين",
+    "DocumentId": 1
   },
   {
     "ProductName": "ولدن",
     "Model": "P1",
     "ImageURL": "/Images/Pumps/2.jpg",
-
     "InletSize": 0.5,
     "OutletSize": 0.5,
-    "Construction": "بولي بروبلين"
+    "Construction": "بولي بروبلين",
+    "DocumentId": 2
   },
   {
     "ProductName": "ولدن",
     "Model": "R250",
     "ImageURL": "/Images/Pumps/3.jpg",
-
     "InletSize": 1,
     "OutletSize": 1,
-    "Construction": "الومنيوم"
+    "Construction": "الومنيوم",
+    "DocumentId": 3
   },
   {
     "ProductName": "ولدن",
@@ -31,7 +32,8 @@
     "ImageURL": "/Images/Pumps/4.jpg",
     "InletSize": 1,
     "OutletSize": 1,
-    "Construction": "الومنيوم"
+    "Construction": "الومنيوم",
+    "DocumentId": 4
   },
   {
     "ProductName": "ولدن",
@@ -39,65 +41,62 @@
     "ImageURL": "/Images/Pumps/5.jpg",
     "InletSize": 1,
     "OutletSize": 1,
-    "Construction": "بولي بروبلين"
+    "Construction": "بولي بروبلين",
+    "DocumentId": 5
   },
   {
     "ProductName": "ولدن",
     "Model": "P220",
     "ImageURL": "/Images/Pumps/6.jpg",
-
     "InletSize": 1,
     "OutletSize": 1,
-    "Construction": "استانلس ستيل"
+    "Construction": "استانلس ستيل",
+    "DocumentId": 6
   },
   {
     "ProductName": "ولدن",
     "Model": "P400",
     "ImageURL": "/Images/Pumps/7.jpg",
-
     "InletSize": 1.5,
     "OutletSize": 1.5,
-    "Construction": "بولي بروبلين"
+    "Construction": "بولي بروبلين",
+    "DocumentId": 7
   },
   {
     "ProductName": "ولدن",
     "Model": "PS4",
     "ImageURL": "/Images/Pumps/8.jpg",
-
     "InletSize": 1.5,
     "OutletSize": 1.25,
-    "Construction": "الومنيوم"
-
+    "Construction": "الومنيوم",
+    "DocumentId": 8
   },
   {
     "ProductName": "ولدن",
     "Model": "P800",
     "ImageURL": "/Images/Pumps/9.jpg",
-
     "InletSize": 2,
     "OutletSize": 2,
-    "Construction": "بولي بروبلين"
-
+    "Construction": "بولي بروبلين",
+    "DocumentId": 9
   },
   {
     "ProductName": "ولدن",
     "Model": "XPS8",
     "ImageURL": "/Images/Pumps/10.jpg",
-
     "InletSize": 2,
     "OutletSize": 2,
-    "Construction": "الومنيوم"
-
+    "Construction": "الومنيوم",
+    "DocumentId": 10
   },
   {
     "ProductName": "ولدن",
     "Model": "PS15",
     "ImageURL": "/Images/Pumps/11.jpg",
-
     "InletSize": 3,
     "OutletSize": 3,
-    "Construction": "الومنيوم"
-
+    "Construction": "الومنيوم",
+    "DocumentId": 11
   },
   {
     "ProductName": "ولدن",
@@ -105,7 +104,8 @@
     "ImageURL": "/Images/Pumps/12.png",
     "InletSize": 3,
     "OutletSize": 3,
-    "Construction": "الومنيوم"
+    "Construction": "الومنيوم",
+    "DocumentId": 12
   },
   {
     "ProductName": "ديفرام ارو",
@@ -113,7 +113,8 @@
     "ImageURL": "/Images/Pumps/13.jpg",
     "InletSize": 0.5,
     "OutletSize": 0.5,
-    "Construction": "تفلون"
+    "Construction": "تفلون",
+    "DocumentId": 13
   },
   {
     "ProductName": "ديفرام ارو",
@@ -121,7 +122,8 @@
     "ImageURL": "/Images/Pumps/14.jpg",
     "InletSize": 0.5,
     "OutletSize": 0.5,
-    "Construction": "الومنيوم"
+    "Construction": "الومنيوم",
+    "DocumentId": 14
   },
   {
     "ProductName": "ديفرام ارو",
@@ -129,7 +131,8 @@
     "ImageURL": "/Images/Pumps/15.jpg",
     "InletSize": 1,
     "OutletSize": 1,
-    "Construction": "بولي بروبلين"
+    "Construction": "بولي بروبلين",
+    "DocumentId": 15
   },
   {
     "ProductName": "ديفرام ارو",
@@ -137,7 +140,8 @@
     "ImageURL": "/Images/Pumps/16.jpg",
     "InletSize": 1,
     "OutletSize": 1,
-    "Construction": "استانلس ستيل"
+    "Construction": "استانلس ستيل",
+    "DocumentId": 16
   },
   {
     "ProductName": "ديفرام ارو",
@@ -145,7 +149,8 @@
     "ImageURL": "/Images/Pumps/17.jpg",
     "InletSize": 1.5,
     "OutletSize": 1.5,
-    "Construction": "استانلس ستيل"
+    "Construction": "استانلس ستيل",
+    "DocumentId": 17
   },
   {
     "ProductName": "ارو",
@@ -153,7 +158,8 @@
     "ImageURL": "/Images/Pumps/18.jpg",
     "InletSize": 1.5,
     "OutletSize": 1.5,
-    "Construction": "بولي بروبلين"
+    "Construction": "بولي بروبلين",
+    "DocumentId": 18
   },
   {
     "ProductName": "ديفرام ارو",
@@ -161,7 +167,8 @@
     "ImageURL": "/Images/Pumps/19.jpg",
     "InletSize": 2,
     "OutletSize": 2,
-    "Construction": "الومنيوم"
+    "Construction": "الومنيوم",
+    "DocumentId": 19
   },
   {
     "ProductName": "ديفرام ارو",
@@ -169,7 +176,8 @@
     "ImageURL": "/Images/Pumps/20.jpg",
     "InletSize": 2,
     "OutletSize": 2,
-    "Construction": "بولي بروبلين"
+    "Construction": "بولي بروبلين",
+    "DocumentId": 20
   },
   {
     "ProductName": "ديفرام ارو",
@@ -177,7 +185,8 @@
     "ImageURL": "/Images/Pumps/21.jpg",
     "InletSize": 3,
     "OutletSize": 3,
-    "Construction": "الومنبوم"
+    "Construction": "الومنيوم",
+    "DocumentId": 21
   },
   {
     "ProductName": "ساندبيبر",
@@ -185,7 +194,8 @@
     "ImageURL": "/Images/Pumps/22.jpg",
     "InletSize": 0.5,
     "OutletSize": 0.5,
-    "Construction": "استانلس ستيل"
+    "Construction": "استانلس ستيل",
+    "DocumentId": 22
   },
   {
     "ProductName": "ساندبيبر",
@@ -193,7 +203,8 @@
     "ImageURL": "/Images/Pumps/23.jpg",
     "InletSize": 1,
     "OutletSize": 1,
-    "Construction": "معدن"
+    "Construction": "معدن",
+    "DocumentId": 23
   },
   {
     "ProductName": "ساندبيبر",
@@ -201,7 +212,8 @@
     "ImageURL": "/Images/Pumps/24.jpg",
     "InletSize": 1,
     "OutletSize": 1,
-    "Construction": "بلاستيك"
+    "Construction": "بلاستيك",
+    "DocumentId": 24
   },
   {
     "ProductName": "ساندبيبر",
@@ -209,7 +221,8 @@
     "ImageURL": "/Images/Pumps/25.jpg",
     "InletSize": 1.5,
     "OutletSize": 1.5,
-    "Construction": "الومنيوم"
+    "Construction": "الومنيوم",
+    "DocumentId": 25
   },
   {
     "ProductName": "ساندبيبر",
@@ -217,7 +230,8 @@
     "ImageURL": "/Images/Pumps/26.jpg",
     "InletSize": 2,
     "OutletSize": 2,
-    "Construction": "استانلس ستيل"
+    "Construction": "استانلس ستيل",
+    "DocumentId": 26
   },
   {
     "ProductName": "ساندبيبر",
@@ -225,6 +239,7 @@
     "ImageURL": "/Images/Pumps/27.jpg",
     "InletSize": 3,
     "OutletSize": 3,
-    "Construction": "الومنيوم"
+    "Construction": "الومنيوم",
+    "DocumentId": 27
   }
 ]

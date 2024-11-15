@@ -11,5 +11,6 @@ namespace Core.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public virtual List<Accessories> Accessories { get; set; } = new List<Accessories>();
+        public bool IsDeleted { get; set; }
     }
 }

@@ -18,9 +18,9 @@ namespace API.Helper
         {
             var filterOptions = new FilterOptions()
             {
-                ProductName = _products.Select(p => p.ProductName).ToList(),
-                Model=_products.Select(p => p.Model).ToList(),
-                Construction = _products.Select(p => p.Construction).ToList()
+                ProductName = _products.Select(p => p.ProductName).Distinct().ToList(),
+                Model = _products.Select(p => p.Model).Distinct().ToList(),
+                Construction = _products.Select(p => p.Construction).Distinct().ToList()
             };
 
             return filterOptions;

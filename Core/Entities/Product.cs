@@ -17,12 +17,14 @@ namespace Core.Entities
         public string ProductName { get; set; }
         public string Model { get; set; } 
         public string ImageURL { get; set; }
-        
         public float InletSize { get; set; }
         public float OutletSize { get; set; }
         public string Construction { get; set; }
+        [ForeignKey("Documentation")]
+        public int DocumentId { get; set; }
         public Documentation Documentation { get; set; } = null!;
         public virtual List<Accessories> Accessories { get; set; } = new List<Accessories>();
+        public bool IsDeleted { get; set; }
        
 
     }

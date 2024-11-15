@@ -5,7 +5,7 @@
 namespace Infrastructrue.Migrations
 {
     /// <inheritdoc />
-    public partial class mm : Migration
+    public partial class createDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,11 +16,26 @@ namespace Infrastructrue.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Documentations",
+                columns: table => new
+                {
+                    DocumentID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FileURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Documentations", x => x.DocumentID);
                 });
 
             migrationBuilder.CreateTable(
@@ -32,16 +47,21 @@ namespace Infrastructrue.Migrations
                     ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FlowRateIPM = table.Column<float>(type: "real", nullable: false),
-                    FlowRateGPM = table.Column<float>(type: "real", nullable: false),
-                    AirInletSize = table.Column<float>(type: "real", nullable: false),
                     InletSize = table.Column<float>(type: "real", nullable: false),
                     OutletSize = table.Column<float>(type: "real", nullable: false),
-                    Construction = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Construction = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DocumentId = table.Column<int>(type: "int", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.ProductID);
+                    table.ForeignKey(
+                        name: "FK_Products_Documentations_DocumentId",
+                        column: x => x.DocumentId,
+                        principalTable: "Documentations",
+                        principalColumn: "DocumentID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -54,7 +74,8 @@ namespace Infrastructrue.Migrations
                     ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -73,26 +94,6 @@ namespace Infrastructrue.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Documentations",
-                columns: table => new
-                {
-                    DocumentID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductID = table.Column<int>(type: "int", nullable: false),
-                    FileURL = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Documentations", x => x.DocumentID);
-                    table.ForeignKey(
-                        name: "FK_Documentations_Products_ProductID",
-                        column: x => x.ProductID,
-                        principalTable: "Products",
-                        principalColumn: "ProductID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Accessories_CategoryId",
                 table: "Accessories",
@@ -104,10 +105,9 @@ namespace Infrastructrue.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Documentations_ProductID",
-                table: "Documentations",
-                column: "ProductID",
-                unique: true);
+                name: "IX_Products_DocumentId",
+                table: "Products",
+                column: "DocumentId");
         }
 
         /// <inheritdoc />
@@ -117,13 +117,13 @@ namespace Infrastructrue.Migrations
                 name: "Accessories");
 
             migrationBuilder.DropTable(
-                name: "Documentations");
-
-            migrationBuilder.DropTable(
                 name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "Documentations");
         }
     }
 }

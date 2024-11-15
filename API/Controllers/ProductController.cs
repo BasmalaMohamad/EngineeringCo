@@ -55,7 +55,7 @@ namespace API.Controllers
             return Ok(productMapped);
         }
 
-        [HttpGet("document")]
+        [HttpGet("document/{id}")]
         public async Task<ActionResult<DocumentDTO>> GetDocById(int id)
         {
             var doc = await _productRepository.GetDocByIdAsync(id);
