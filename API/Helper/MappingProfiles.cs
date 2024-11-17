@@ -14,6 +14,9 @@ namespace API.Helper
             CreateMap<Documentation, DocumentDTO>().
                 ForMember(d => d.Id, o => o.MapFrom(o => o.DocumentID)).
                 ForMember(d => d.FileUrl, o => o.MapFrom<DocumentUrlResolver>());
+
+            CreateMap<Accessories, AccessoriesDTO>().
+                 ForMember(d => d.ImageURL, o => o.MapFrom<AccessoriesUrlResolver>());
         }
     }
 }

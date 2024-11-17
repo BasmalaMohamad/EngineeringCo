@@ -11,14 +11,15 @@ namespace Core.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public virtual List<string> ImageURL { get; set; } = new List<string>();
+        public string PumpName { get; set; }
+        public string ImageURL { get; set; }
         public string Model { get; set; }
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public Category Category { get; set; } = null!;
-        [ForeignKey("Product")]
-        public int ProductId { get; set; }
-        public Product Product { get; set; } = null!;
+        public string Construction { get; set; }
+        public float Size { get; set; } 
+        
         public bool IsDeleted { get; set; }
     }
 }
