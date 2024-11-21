@@ -4,43 +4,45 @@
     "PumpName": "بلف هواء نص بوصه نحاس",
     "ImageURL": "/Images/Parts/wilden parts/Air Group/1.jpg",
     "Model": "01-2000-07",
-    "CategoryId": 1
+    "CategoryId": 1,
+    "Construction": "نحاس",
+    "Size": 0.5
   },
   {
     "Name": "ولدن",
     "PumpName": "بلف هواء نص بوصه بلاستيك",
-    "ImageURL": 
-      "/Images/Parts/wilden parts/Air Group/2.jpg",
-     
-    
+    "ImageURL": "/Images/Parts/wilden parts/Air Group/2.jpg",
     "Model": "01-2010-20",
-    "CategoryId": 1
+    "CategoryId": 1,
+    "Construction": "بلاستيك",
+    "Size": 0.5
   },
   {
     "Name": "ولدن",
     "PumpName": "بلف هواء ولدن تلاته بوصة الومنيوم",
-    "ImageURL": 
-      "/Images/Parts/wilden parts/Air Group/3.jpg"
-  
-    ,
+    "ImageURL": "/Images/Parts/wilden parts/Air Group/3.jpg",
     "Model": "04-2030-01",
-    "CategoryId": 1
+    "CategoryId": 1,
+    "Construction": "الومنيوم",
+    "Size": 3
   },
   {
     "Name": "ولدن",
     "PumpName": "بلف هواء ولدن تلاته بوصة الومنيوم",
-    "ImageURL": 
-      "/Images/Parts/wilden parts/Air Group/4.jpg"
-    ,
+    "ImageURL": "/Images/Parts/wilden parts/Air Group/4.jpg",
     "Model": "04-2039-01",
-    "CategoryId": 1
+    "CategoryId": 1,
+    "Construction": "الومنيوم",
+    "Size": 3
   },
   {
     "Name": "ولدن",
     "PumpName": "بلف هواء ولدن تلاته بوصة نحاس",
     "ImageURL": "/Images/Parts/wilden parts/Air Group/5.jpg",
     "Model": "15-2000-07",
-    "CategoryId": 1
+    "CategoryId": 1,
+    "Construction": "نحاس",
+    "Size": 3
   }
 
 ]
