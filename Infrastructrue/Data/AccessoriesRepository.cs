@@ -4,6 +4,7 @@ using Core.Entities.Consts;
 using Core.Interfaces;
 using Core.Specifications;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Dynamic.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,29 +46,26 @@ namespace Infrastructrue.Data
                   && (!accessoriesParams.CategoryId.HasValue || p.Category.Id == accessoriesParams.CategoryId)
                   && (string.IsNullOrEmpty(accessoriesParams.Model) || p.Model.ToLower() == accessoriesParams.Model.ToLower())
 
-                  && (!accessoriesParams.SizeFrom.HasValue || p.InletSize >= accessoriesParams.inletSizeFrom)
-                  && (!accessoriesParams.inletSizeTo.HasValue || p.InletSize <= accessoriesParams.inletSizeTo)
-                  && (!accessoriesParams.outletSizeTo.HasValue || p.OutletSize <= accessoriesParams.outletSizeTo)
-                  && (!accessoriesParams.outletSizeFrom.HasValue || p.OutletSize >= accessoriesParams.outletSizeFrom)
-                  && (string.IsNullOrEmpty(accessoriesParams.construction) || p.Construction == accessoriesParams.construction)
+                  && (!accessoriesParams.SizeFrom.HasValue || p.Size >= accessoriesParams.SizeFrom)
+                  && (!accessoriesParams.SizeTo.HasValue || p.Size <= accessoriesParams.SizeTo)
+                  && (string.IsNullOrEmpty(accessoriesParams.Construction) || p.Construction == accessoriesParams.Construction)
 
-                  && (string.IsNullOrEmpty(accessoriesParams.productName) || p.ProductName == accessoriesParams.productName)
+                  && (string.IsNullOrEmpty(accessoriesParams.PumpName) || p.PumpName == accessoriesParams.PumpName)
                 // Use ToString() for enum comparison
-
                 );
 
 
-            if (productParams.sortBy.ToLower() == "name")
-                productParams.sortBy = SortByOptions.Name;
-            if (productParams.sortBy.ToLower() == "inlet")
-                productParams.sortBy = SortByOptions.Inlet;
-            if (productParams.sortBy.ToLower() == "outlet")
-                productParams.sortBy = SortByOptions.Outlet;
+            if (accessoriesParams.sortBy.ToLower() == "pumpname")
+                accessoriesParams.sortBy = AccesSortByOptions.Name;
+            if (accessoriesParams.sortBy.ToLower() == "size")
+                accessoriesParams.sortBy = AccesSortByOptions.Size;
+            if (accessoriesParams.sortBy.ToLower() == "model")
+                accessoriesParams.sortBy = AccesSortByOptions.Model;
 
-            query = query.OrderBy($"{productParams.sortBy} {productParams.sortDirection}");
+            query = query.OrderBy($"{accessoriesParams.sortBy} {accessoriesParams.sortDirection}");
 
-            var products = await query.Skip(productParams.PageSize * (productParams.PageIndex - 1))
-                                  .Take(productParams.PageSize)
+            var products = await query.Skip(accessoriesParams.PageSize * (accessoriesParams.PageIndex - 1))
+                                  .Take(accessoriesParams.PageSize)
                                   .ToListAsync();
 
 

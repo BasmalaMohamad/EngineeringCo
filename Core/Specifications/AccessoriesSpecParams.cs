@@ -21,7 +21,9 @@ namespace Core.Specifications
         public string? PumpName { get; set; }
         public int? CategoryId { get; set; }
         public string? Model { get; set; }
-        public float? Size { get; set; }
+        public float? SizeFrom { get; set; }
+        public float? SizeTo { get; set; }
+
         public string? Construction { get; set; }
         public string sortBy { get; set; } = AccesSortByOptions.PumpName;
         public string sortDirection { get; set; } = SortByDirections.Asc;
