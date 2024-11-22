@@ -89,7 +89,7 @@ namespace Infrastructrue.Data
 
             query = query.OrderBy($"{productParams.sortBy} {productParams.sortDirection}");
 
-            var products = await query.Skip(productParams.PageSize * (productParams.PageIndex - 1))
+            var products = await query.Skip(productParams.PageSize * (productParams.PageIndex))
                                   .Take(productParams.PageSize)
                                   .ToListAsync();
 
