@@ -40,23 +40,25 @@ namespace Infrastructrue.Data
             query = query.Where(p =>
               (string.IsNullOrEmpty(accessoriesParams.SearchValue)
                   ||
+                  p.Name.ToLower().Contains(accessoriesParams.SearchValue.ToLower()) ||
                    p.PumpName.ToLower().Contains(accessoriesParams.SearchValue.ToLower()) ||
                    p.Model.ToLower().Contains(accessoriesParams.SearchValue.ToLower()) ||
                    p.Construction.ToLower().Contains(accessoriesParams.SearchValue.ToLower()))
                   && (!accessoriesParams.CategoryId.HasValue || p.Category.Id == accessoriesParams.CategoryId)
                   && (string.IsNullOrEmpty(accessoriesParams.Model) || p.Model.ToLower() == accessoriesParams.Model.ToLower())
-
                   && (!accessoriesParams.SizeFrom.HasValue || p.Size >= accessoriesParams.SizeFrom)
                   && (!accessoriesParams.SizeTo.HasValue || p.Size <= accessoriesParams.SizeTo)
                   && (string.IsNullOrEmpty(accessoriesParams.Construction) || p.Construction == accessoriesParams.Construction)
-
                   && (string.IsNullOrEmpty(accessoriesParams.PumpName) || p.PumpName == accessoriesParams.PumpName)
+                  && (string.IsNullOrEmpty(accessoriesParams.Name) || p.Name == accessoriesParams.Name)
+
                 // Use ToString() for enum comparison
                 );
 
-
-            if (accessoriesParams.sortBy.ToLower() == "pumpname")
+            if (accessoriesParams.sortBy.ToLower() == "name")
                 accessoriesParams.sortBy = AccesSortByOptions.Name;
+            if (accessoriesParams.sortBy.ToLower() == "pumpname")
+                accessoriesParams.sortBy = AccesSortByOptions.PumpName;
             if (accessoriesParams.sortBy.ToLower() == "size")
                 accessoriesParams.sortBy = AccesSortByOptions.Size;
             if (accessoriesParams.sortBy.ToLower() == "model")
