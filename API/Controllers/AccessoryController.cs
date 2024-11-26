@@ -23,8 +23,9 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<AccessoriesDTO>>> GetAccessory([FromQuery] AccessoriesSpecParams accessoriesParams)
         {
+            var accessories = await _accessoryRepository.GetAccessoriesAsync();
             var accessoriesWithSpecifications = await _accessoryRepository.GetAccessoriesWithSpecificationsAsync(accessoriesParams);
-            var accesfilterOptions = new AccesFilterOptionResolver(accessoriesWithSpecifications , _mapper).GenerateOptions();
+            var accesfilterOptions = new AccesFilterOptionResolver(accessories, _mapper).GenerateOptions();
             var AccespaginationList = new AccesPaginationList
             {
                 PageSize = accessoriesParams.PageSize,

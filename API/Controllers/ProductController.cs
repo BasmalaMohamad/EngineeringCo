@@ -28,8 +28,9 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<ProductDTO>>> GetProducts([FromQuery] ProductSpecParams productParams)
         {
+            var products = await _productRepository.GetProductsAsync();
             var productWithSpecifications = await _productRepository.GetProductsWithSpecificationsAsync(productParams);
-            var filterOptions = new FilterOptionsResolver(productWithSpecifications, _mapper).GenerateOptions();
+            var filterOptions = new FilterOptionsResolver(products, _mapper).GenerateOptions();
             var paginationList = new PaginationList
             {
                 PageSize = productParams.PageSize,
