@@ -2,6 +2,7 @@ using Core.Identity;
 using Core.Interfaces;
 using Infrastructrue.Data;
 using Infrastructrue.Identity;
+using Infrastructrue.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -40,6 +41,7 @@ builder.Services.AddCors(opt =>
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IAccessoryRepository, AccessoriesRepository>();
+builder.Services.AddScoped<ITokenService, JWTTokenService>();
 
 builder.Services.AddDbContext<AppIdentityDBContext>(opt =>
 
@@ -54,7 +56,7 @@ builder.Services.AddIdentityCore<AppUser>(opt =>
 var jwt = builder.Configuration.GetSection("Token");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options => {
-    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    options.TokenValidationParameters = new TokenValidationParameters 
     {
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt["Key"])),
@@ -95,7 +97,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseCors("CorsPolicy");
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 

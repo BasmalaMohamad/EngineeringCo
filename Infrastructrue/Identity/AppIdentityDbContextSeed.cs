@@ -17,6 +17,7 @@ namespace Infrastructrue.Identity
                 var user = new AppUser
                 {
                     UserName = "omarpumps@gmail.com",
+                    Email = "omarpumps@gmail.com"
                 };
                 await userManager.CreateAsync(user,"P@ssw0rd");
                 
