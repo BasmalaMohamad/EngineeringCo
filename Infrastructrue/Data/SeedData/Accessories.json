@@ -43,6 +43,429 @@
     "CategoryId": 1,
     "Construction": "نحاس",
     "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن نص بوصه تفلون",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/1.jpg",
+    "Model": "01-1010-55",
+    "CategoryId": 2,
+    "Construction": "تفلون",
+    "Size": 0.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام بيك اب ولدن نص بوصة نيوبرين",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/2.jpg",
+    "Model": "01-1060-51",
+    "CategoryId": 2,
+    "Construction": "نيوبرين",
+    "Size": 0.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن واحد بوصة نيوبرين",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/3.jpg",
+    "Model": "02-1010-51",
+    "CategoryId": 2,
+    "Construction": "نيوبرين",
+    "Size": 1
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن واحد بوصة ويل فلكس",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/4.jpg",
+    "Model": "02-1010-58",
+    "CategoryId": 2,
+    "Construction": "ويل فلكس",
+    "Size": 1
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن واحد بوصة تفلون",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/5.jpg",
+    "Model": "02-1010-55",
+    "CategoryId": 2,
+    "Construction": "تفلون",
+    "Size": 1
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن واحد ونص بوصة نيوبرين",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/6.jpg",
+    "Model": "04-1010-51",
+    "CategoryId": 2,
+    "Construction": "نيوبرين",
+    "Size": 1.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن واحد ونص بوصة بونا ان",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/7.jpg",
+    "Model": "04-1010-52",
+    "CategoryId": 2,
+    "Construction": "بونا ان",
+    "Size": 1.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن واحد ونص بوصة تفلون",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/8.jpg",
+    "Model": "04-1010-55",
+    "CategoryId": 2,
+    "Construction": "تفلون",
+    "Size": 1.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن اتنين بوصة نيوبرين",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/9.jpg",
+    "Model": "08-1010-51",
+    "CategoryId": 2,
+    "Construction": "نيوبرين",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام بيك اب فول استرك ولدن اتنين بوصة ويل فلكس",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/10.jpg",
+    "Model": "08-1065-57",
+    "CategoryId": 2,
+    "Construction": "ويل فلكس",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام فول استرك ولدن اتنين بوصة تفلون",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/11.jpg",
+    "Model": "08-1040-55",
+    "CategoryId": 2,
+    "Construction": "تفلون",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن اتنين بوصة تفلون",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/12.jpg",
+    "Model": "08-1010-55",
+    "CategoryId": 2,
+    "Construction": "تفلون",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن تلاته بوصة بولي يوريثان",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/13.jpg",
+    "Model": "15-1010-50",
+    "CategoryId": 2,
+    "Construction": "بولي يوريثان",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن تلاته بوصة نيوبرين",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/14.jpg",
+    "Model": "15-1010-51",
+    "CategoryId": 2,
+    "Construction": "نيوبرين",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن تلاته بوصة بونا ان",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/15.jpg",
+    "Model": "15-1010-52",
+    "CategoryId": 2,
+    "Construction": "بونا ان",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام ولدن تلاته بوصة تفلون",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/16.jpg",
+    "Model": "15-1010-55",
+    "CategoryId": 2,
+    "Construction": "تفلون",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "ديفرام فل استرك ولدن تلاته بوصة تفلون",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram/17.jpg",
+    "Model": "15-1040-55",
+    "CategoryId": 2,
+    "Construction": "تفلون",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "غرفة سائل ولدن واحد بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Liquid Room/1.jpg",
+    "Model": "02-5000-01",
+    "CategoryId": 3,
+    "Construction": "",
+    "Size": 1
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "غرفة سائل ولدن واحد بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Liquid Room/2.jpg",
+    "Model": "02-5015-01",
+    "CategoryId": 3,
+    "Construction": "الومنيوم",
+    "Size": 1
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "غرفة سائل ولدن اتنين بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Liquid Room/3.jpg",
+    "Model": "08-5000-01",
+    "CategoryId": 3,
+    "Construction": "الومنيوم",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "غرفة سائل ولدن تلاته بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Liquid Room/4.jpg",
+    "Model": "15-5000-01",
+    "CategoryId": 3,
+    "Construction": "الومنيوم",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "كوع سحب ولدن نص بوصة بلاستيك",
+    "ImageURL": "/Images/Parts/wilden parts/Manufield Pull/1.jpg",
+    "Model": "01-5220-20",
+    "CategoryId": 4,
+    "Construction": "بلاستيك",
+    "Size": 0.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "مشترك ولدن نص بوصة بلاستيك",
+    "ImageURL": "/Images/Parts/wilden parts/Manufield Pull/2.jpg",
+    "Model": "01-5160-20",
+    "CategoryId": 4,
+    "Construction": "بلاستيك",
+    "Size": 0.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "سحب ولدن واحد ونص بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Manufield Pull/3.jpg",
+    "Model": "04-5080-01",
+    "CategoryId": 4,
+    "Construction": "الومنيوم",
+    "Size": 1.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "سحب ولدن تلاته بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Manufield Pull/4.jpg",
+    "Model": "15-5080-01",
+    "CategoryId": 4,
+    "Construction": "الومنيوم",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "كوع طرد ولدن نص بوصة بلاستيك",
+    "ImageURL": "/Images/Parts/wilden parts/Manufield Push/1.jpg",
+    "Model": "01-5230-20",
+    "CategoryId": 5,
+    "Construction": "بلاستيك",
+    "Size": 0.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "طرد ولدن واحد ونص بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Manufield Push/2.jpg",
+    "Model": "04-5020-01",
+    "CategoryId": 5,
+    "Construction": "الومنيوم",
+    "Size": 1.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "طرد ولدن اتنين بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Manufield Push/3.jpg",
+    "Model": "08-5020-01",
+    "CategoryId": 5,
+    "Construction": "الومنيوم",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "طرد ولدن تلاته بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Manufield Push/4.jpg",
+    "Model": "15-5020-01",
+    "CategoryId": 5,
+    "Construction": "الومنيوم",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "رابط ديفرام خارجي ولدن واحد ونص بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram Link/1.jpg",
+    "Model": "04-4552-01",
+    "CategoryId": 6,
+    "Construction": "الومنيوم",
+    "Size": 1.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "رابط ديفرام داخلي ولدن واحد ونص بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram Link/2.jpg",
+    "Model": "04-3700-01",
+    "CategoryId": 6,
+    "Construction": "الومنيوم",
+    "Size": 1.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "اوتر ولدن اتنين بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram Link/3.jpg",
+    "Model": "08-4550-01",
+    "CategoryId": 6,
+    "Construction": "الومنيوم",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "انر ولدن اتنين بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram Link/4.jpg",
+    "Model": "08-3700-01",
+    "CategoryId": 6,
+    "Construction": "الومنيوم",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "اوتر ولدن تلاته بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram Link/5.jpg",
+    "Model": "15-4550-01",
+    "CategoryId": 6,
+    "Construction": "الومنيوم",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "انر ولدن تلاته بوصة الومنيوم",
+    "ImageURL": "/Images/Parts/wilden parts/Diaphram Link/6.jpg",
+    "Model": "15-3700-01",
+    "CategoryId": 6,
+    "Construction": "الومنيوم",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "عمود مشرشر ولدن واحد بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pump Column/1.jpg",
+    "Model": "02-3800-09",
+    "CategoryId": 7,
+    "Construction": "",
+    "Size": 1
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "عمود مشرشر ولدن اتنين بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pump Column/2.jpg",
+    "Model": "08-3800-09",
+    "CategoryId": 7,
+    "Construction": "",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "عمود مشرشر ولدن اتنين بوصة استانلس",
+    "ImageURL": "/Images/Parts/wilden parts/Pump Column/3.jpg",
+    "Model": "08-3800-03",
+    "CategoryId": 7,
+    "Construction": "استانلس",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "عمود عدل ولدن اتنين بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pump Column/4.jpg",
+    "Model": "08-3810-09",
+    "CategoryId": 7,
+    "Construction": "",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "عمود مشرشر ولدن تلاته بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pump Column/5.jpg",
+    "Model": "15-3800-09",
+    "CategoryId": 7,
+    "Construction": "",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "عمود عدل ولدن تلاته بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pump Column/6.jpg",
+    "Model": "15-3805-09",
+    "CategoryId": 7,
+    "Construction": "",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "عمود عدل ولدن تلاته بوصة استانلس",
+    "ImageURL": "/Images/Parts/wilden parts/Pump Column/7.jpg",
+    "Model": "15-3805-03",
+    "CategoryId": 7,
+    "Construction": "استانلس",
+    "Size": 3
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "بايلوت ولدن نص بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/1.jpg",
+    "Model": "01-3880-99",
+    "CategoryId": 8,
+    "Construction": "استانلس",
+    "Size": 0.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "بايلوت ولدن واحد بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/2.jpg",
+    "Model": "02-3880-99",
+    "CategoryId": 8,
+    "Construction": "",
+    "Size": 1
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "بايلوت ولدن واحد ونص بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/3.jpg",
+    "Model": "04-3880-99",
+    "CategoryId": 8,
+    "Construction": "",
+    "Size": 1.5
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "اسبول ولدن اتنين بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/4.jpg",
+    "Model": "08-3880-99",
+    "CategoryId": 8,
+    "Construction": "",
+    "Size": 2
+  },
+  {
+    "Name": "ولدن",
+    "PumpName": "اسبول ولدن تلاته بوصة",
+    "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/5.jpg",
+    "Model": "15-3884-99",
+    "CategoryId": 8,
+    "Construction": "",
+    "Size": 3
   }
 
 ]
