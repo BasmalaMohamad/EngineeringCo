@@ -21,7 +21,8 @@ namespace API.Helper
                 Name = _accessories.Select(p => p.Name).Distinct().ToList(),
                 PumpName = _accessories.Select(p => p.PumpName).Distinct().ToList(),
                 Model = _accessories.Select(p => p.Model).Distinct().ToList(),
-                Construction = _accessories.Select(p => p.Construction).Distinct().ToList()
+                Construction = _accessories.Select(p => p.Construction).Distinct().ToList(),
+                Category = _accessories.Select(p => p.Category.Name).Distinct().ToList()
             };
 
             return accesfilterOptions;

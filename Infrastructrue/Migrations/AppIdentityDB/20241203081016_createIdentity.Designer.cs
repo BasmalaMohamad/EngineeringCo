@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructrue.Migrations.AppIdentityDB
 {
     [DbContext(typeof(AppIdentityDBContext))]
-    [Migration("20241125174951_createIdentity")]
+    [Migration("20241203081016_createIdentity")]
     partial class createIdentity
     {
         /// <inheritdoc />
@@ -35,6 +35,10 @@ namespace Infrastructrue.Migrations.AppIdentityDB
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")

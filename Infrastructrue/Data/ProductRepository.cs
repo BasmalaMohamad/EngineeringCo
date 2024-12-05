@@ -4,6 +4,7 @@ using Core.Entities.Consts;
 using Core.Interfaces;
 using Core.Specifications;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using System.Linq.Dynamic.Core;
 using System;
 using System.Collections.Generic;
@@ -97,6 +98,30 @@ namespace Infrastructrue.Data
             return products;
         }
 
+        public async Task<bool> AddProduct(Product product)
+        {
+            _storeContext.Products.Add(product);
+            return await SaveAsync();
+        }
+
+        public async Task<bool> RemoveProduct(int id)
+        {
+            var product = _storeContext.Products.FirstOrDefault(p => p.ProductID == id);
+            _storeContext.Products.Remove(product);
+            return await SaveAsync();
+        }
+
+        public async Task<bool> EditProduct(Product product)
+        {
+
+            _storeContext.Products.Update(product);
+            return await SaveAsync();
+        }
+        public async Task<bool> SaveAsync()
+        {
+            var saved = await _storeContext.SaveChangesAsync();
+            return saved > 0 ? true : false;
+        }
     }
     }
 
