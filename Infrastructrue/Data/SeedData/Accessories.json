@@ -203,7 +203,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Liquid Room/1.jpg",
     "Model": "02-5000-01",
     "CategoryId": 3,
-    "Construction": "",
+    "Construction": "الومنيوم",
     "Size": 1
   },
   {
@@ -365,7 +365,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pump Column/1.jpg",
     "Model": "02-3800-09",
     "CategoryId": 7,
-    "Construction": "",
+    "Construction": "هارد كروم",
     "Size": 1
   },
   {
@@ -374,7 +374,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pump Column/2.jpg",
     "Model": "08-3800-09",
     "CategoryId": 7,
-    "Construction": "",
+    "Construction": "هارد كروم",
     "Size": 2
   },
   {
@@ -383,7 +383,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pump Column/3.jpg",
     "Model": "08-3800-03",
     "CategoryId": 7,
-    "Construction": "استانلس",
+    "Construction": "استانلس ستيل",
     "Size": 2
   },
   {
@@ -392,7 +392,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pump Column/4.jpg",
     "Model": "08-3810-09",
     "CategoryId": 7,
-    "Construction": "",
+    "Construction": "هارد كروم",
     "Size": 2
   },
   {
@@ -401,7 +401,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pump Column/5.jpg",
     "Model": "15-3800-09",
     "CategoryId": 7,
-    "Construction": "",
+    "Construction": "هارد كروم",
     "Size": 3
   },
   {
@@ -410,7 +410,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pump Column/6.jpg",
     "Model": "15-3805-09",
     "CategoryId": 7,
-    "Construction": "",
+    "Construction": "هارد كروم",
     "Size": 3
   },
   {
@@ -419,7 +419,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pump Column/7.jpg",
     "Model": "15-3805-03",
     "CategoryId": 7,
-    "Construction": "استانلس",
+    "Construction": "استانلس ستيل",
     "Size": 3
   },
   {
@@ -428,7 +428,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/1.jpg",
     "Model": "01-3880-99",
     "CategoryId": 8,
-    "Construction": "استانلس",
+    "Construction": "استانلس ستيل",
     "Size": 0.5
   },
   {
@@ -437,7 +437,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/2.jpg",
     "Model": "02-3880-99",
     "CategoryId": 8,
-    "Construction": "",
+    "Construction": "استانلس ستيل",
     "Size": 1
   },
   {
@@ -446,7 +446,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/3.jpg",
     "Model": "04-3880-99",
     "CategoryId": 8,
-    "Construction": "",
+    "Construction": "استانلس ستيل",
     "Size": 1.5
   },
   {
@@ -455,7 +455,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/4.jpg",
     "Model": "08-3880-99",
     "CategoryId": 8,
-    "Construction": "",
+    "Construction": "استانلس ستيل",
     "Size": 2
   },
   {
@@ -464,7 +464,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Pilot Ispol/5.jpg",
     "Model": "15-3884-99",
     "CategoryId": 8,
-    "Construction": "",
+    "Construction": "استانلس ستيل",
     "Size": 3
   },
   {
@@ -482,7 +482,7 @@
     "ImageURL": "/Images/Parts/wilden parts/Jwan Orange/2.jpg",
     "Model": "04-2620-52",
     "CategoryId": 9,
-    "Construction": "",
+    "Construction": "بونا ان",
     "Size": 3
   },
   {
@@ -545,7 +545,7 @@
     "ImageURL": "/Images/Parts/Aro Parts/Air Group/1.jpg",
     "Model": "66362",
     "CategoryId": 1,
-    "Construction": "",
+    "Construction": "بلاستيك",
     "Size": 0.5
   },
   {
@@ -554,7 +554,7 @@
     "ImageURL": "/Images/Parts/Aro Parts/Air Group/2.jpg",
     "Model": "637118-c",
     "CategoryId": 1,
-    "Construction": "",
+    "Construction": "معدن",
     "Size": 2
   },
   {
@@ -563,7 +563,7 @@
     "ImageURL": "/Images/Parts/Aro Parts/Air Group/3.jpg",
     "Model": "637118-c",
     "CategoryId": 1,
-    "Construction": "",
+    "Construction": "معدن",
     "Size": 1
   },
   {
@@ -572,7 +572,7 @@
     "ImageURL": "/Images/Parts/Aro Parts/Air Group/4.jpg",
     "Model": "637374",
     "CategoryId": 1,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 2
   },
   {
@@ -581,7 +581,7 @@
     "ImageURL": "/Images/Parts/Aro Parts/Air Group/5.jpg",
     "Model": "637390",
     "CategoryId": 1,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 1.5
   },
   {
@@ -590,7 +590,7 @@
     "ImageURL": "/Images/Parts/Aro Parts/Air Group/6.jpg",
     "Model": "637374",
     "CategoryId": 1,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 3
   },
   {
@@ -725,7 +725,7 @@
     "ImageURL": "",
     "Model": "031-139-000",
     "CategoryId": 1,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 3
   },
   {
@@ -896,7 +896,7 @@
     "ImageURL": "/Images/Parts/SandPiper Parts/Pilot falf/3.jpg",
     "Model": "775-055-000",
     "CategoryId": 10,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 3
   },
   {
@@ -905,7 +905,7 @@
     "ImageURL": "/Images/Parts/SandPiper Parts/Pilot falf/4.jpg",
     "Model": "755-052-000",
     "CategoryId": 10,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 3
   },
   {
@@ -932,7 +932,7 @@
     "ImageURL": "/Images/Parts/SandPiper Parts/UnCategorized/1.jpg",
     "Model": "720-004-360",
     "CategoryId": 11,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 3
   },
   {
@@ -950,7 +950,7 @@
     "ImageURL": "/Images/Parts/SandPiper Parts/UnCategorized/3.jpg",
     "Model": "620-020-115",
     "CategoryId": 11,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 3
   },
   {
@@ -959,7 +959,7 @@
     "ImageURL": "/Images/Parts/SandPiper Parts/UnCategorized/4.jpg",
     "Model": "360-093-360",
     "CategoryId": 11,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 3
   },
   {
@@ -968,7 +968,7 @@
     "ImageURL": "/Images/Parts/SandPiper Parts/UnCategorized/5.jpg",
     "Model": "360-104-360",
     "CategoryId": 11,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 2
   },
   {
@@ -977,7 +977,7 @@
     "ImageURL": "/Images/Parts/SandPiper Parts/UnCategorized/5.jpg",
     "Model": "360-104-360",
     "CategoryId": 11,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 3
   },
   {
@@ -986,7 +986,7 @@
     "ImageURL": "/Images/Parts/SandPiper Parts/UnCategorized/6.jpg",
     "Model": "360-103-360",
     "CategoryId": 11,
-    "Construction": "",
+    "Construction": "متعدد المواد",
     "Size": 3
   }
 ]
