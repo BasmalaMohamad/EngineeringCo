@@ -49,7 +49,7 @@ namespace API.Controllers
             if (!result.Succeeded)
                 return Unauthorized(new ApiResponse(401));
 
-            return new UserDTO { Email = user.Email, Token = _Tokenservices.CreateToken(user) };
+            return new UserDTO { Email = user.Email, Token = _Tokenservices.CreateToken(user), DisplayName = user.DisplayName };
 
         }
 
@@ -58,6 +58,7 @@ namespace API.Controllers
         {
             var user = new AppUser
             {
+                DisplayName = registerDTO.DisplayName,
                 Email = registerDTO.Email,
                 UserName = registerDTO.Email
             };
@@ -71,6 +72,7 @@ namespace API.Controllers
             return new UserDTO
             {
                 Email = user.Email,
+                DisplayName = user.DisplayName,
                 Token = _Tokenservices.CreateToken(user)
             };
 

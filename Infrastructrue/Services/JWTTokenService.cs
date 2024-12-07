@@ -28,7 +28,8 @@ namespace Infrastructrue.Services
         {
             var Claims = new List<Claim> {
 
-                new Claim(ClaimTypes.Email,user.Email)
+                new Claim(ClaimTypes.Email,user.Email),
+                new Claim(ClaimTypes.GivenName,user.DisplayName)
             };
             var cred = new SigningCredentials(_Key, SecurityAlgorithms.HmacSha256);
             var TokenDiscriptor = new SecurityTokenDescriptor

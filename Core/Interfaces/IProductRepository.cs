@@ -1,5 +1,6 @@
 ﻿using Core.Entities;
 using Core.Specifications;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,11 @@ namespace Core.Interfaces
         Task<Documentation> GetDocByIdAsync(int id);
         Task<int> CountAsync();
         Task<string> GetProductNameAsync(int productId);
-
         Task<IReadOnlyList<Product>> GetProductsAsync();
         Task<IReadOnlyList<Product>> GetProductsWithSpecificationsAsync(ProductSpecParams productParams);
+        Task<bool> AddProduct(Product product);
+        Task<bool> RemoveProduct(int id);
+        Task<bool> EditProduct(Product product);
 
     }
 }

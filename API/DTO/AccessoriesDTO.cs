@@ -1,4 +1,6 @@
-﻿namespace API.DTO
+﻿using Core.Entities;
+
+namespace API.DTO
 {
     public class AccessoriesDTO
     {
@@ -8,6 +10,7 @@
         public string ImageURL { get; set; } 
         public string Model { get; set; }
         public string Construction { get; set; }
+        public Category Category { get; set; }
         public float Size { get; set; }
     }
 }

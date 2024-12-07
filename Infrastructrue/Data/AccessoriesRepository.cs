@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Infrastructrue.Data
 {
@@ -22,10 +23,23 @@ namespace Infrastructrue.Data
             _storeContext = storeContext;
             _mapper = mapper;
         }
+
+        public async Task<bool> AddAccessory(Accessories accessory)
+        {
+            _storeContext.Accessories.Add(accessory);
+            return await SaveAsync();
+        }
+
         public async Task<int> CountAsync()
         {
             return await _storeContext.Accessories.Include(p => p.Category)
                .CountAsync();
+        }
+
+        public async Task<bool> EditAccessory(Accessories accessory)
+        {
+            _storeContext.Accessories.Update(accessory);
+            return await SaveAsync();
         }
 
         public async Task<IReadOnlyList<Accessories>> GetAccessoriesAsync()
@@ -87,6 +101,18 @@ namespace Infrastructrue.Data
                             .FirstOrDefaultAsync();
 
             return name;
+        }
+
+        public async Task<bool> RemoveAccessory(int id)
+        {
+            var accessory = _storeContext.Accessories.FirstOrDefault(p => p.Id == id);
+            _storeContext.Accessories.Remove(accessory);
+            return await SaveAsync();
+        }
+        public async Task<bool> SaveAsync()
+        {
+            var saved = await _storeContext.SaveChangesAsync();
+            return saved > 0 ? true : false;
         }
     }
 }

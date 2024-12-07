@@ -8,6 +8,7 @@ using Infrastructrue.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace API.Controllers
 {
@@ -64,7 +65,36 @@ namespace API.Controllers
 
             return Ok(docMapped);
         }
-
+        [HttpPost]
+        public async Task<bool> CreateProduct([FromQuery] ProductDTO productdto)
+        {
+            if(!ModelState.IsValid)
+            {
+                return false;
+            }
+            var productMapped = _mapper.Map<Product>(productdto);
+            return await _productRepository.AddProduct(productMapped);
+        }
+        [HttpPut]
+        public async Task<bool> UpdateProduct([FromQuery] int productId, [FromQuery] string productName, [FromQuery] string imageURL, [FromQuery] string model, [FromQuery] string construction, [FromQuery] float inletSize, [FromQuery] float outletSize, [FromQuery] int documentID)
+        {
+            //var productMapped = _mapper.Map<Product>(productdto);
+            return await _productRepository.EditProduct(new Product()
+            {
+                ProductID = productId,
+                ProductName = productName,
+                ImageURL = imageURL,
+                Model = model,
+                Construction = construction,
+                InletSize = inletSize,
+                OutletSize = outletSize
+            });
+        }
+        [HttpDelete]
+        public async Task<bool> DeleteProduct([FromQuery] int id)
+        {
+            return await _productRepository.RemoveProduct(id);
+        }
 
     }
 }
