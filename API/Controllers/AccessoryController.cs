@@ -1,8 +1,10 @@
 ﻿using API.DTO;
 using API.Helper;
 using AutoMapper;
+using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
+using Infrastructrue.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -51,14 +53,28 @@ namespace API.Controllers
             return Ok(AccessoryMapped);
         }
 
-        /*[HttpGet("document/{id}")]
-        public async Task<ActionResult<DocumentDTO>> GetDocById(int id)
+        [HttpPost]
+        public async Task<bool> CreateAccessory([FromQuery] AccessoriesDTO accessorydto)
         {
-            var doc = await _accessoryRepository.GetDocByIdAsync(id);
-            var docMapped = _mapper.Map<DocumentDTO>(doc);
+            if (!ModelState.IsValid)
+            {
+                return false;
+            }
+            var accessoryMapped = _mapper.Map<Accessories>(accessorydto);
+            return await _accessoryRepository.AddAccessory(accessoryMapped);
+        }
+        [HttpPut]
+        public async Task<bool> UpdateAccessory([FromQuery] int id, [FromQuery] AccessoriesSpecParams accessorydto)
+        {
+            var accessoryMapped = _mapper.Map<Accessories>(accessorydto);
+            return await _accessoryRepository.EditAccessory(accessoryMapped);
+        }
+        [HttpDelete]
+        public async Task<bool> DeleteAccessory([FromQuery] int id)
+        {
+            return await _accessoryRepository.RemoveAccessory(id);
+        }
 
-            return Ok(docMapped);
-        }*/
 
 
     }

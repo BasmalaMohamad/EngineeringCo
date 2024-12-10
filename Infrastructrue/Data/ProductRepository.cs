@@ -113,7 +113,6 @@ namespace Infrastructrue.Data
 
         public async Task<bool> EditProduct(Product product)
         {
-
             _storeContext.Products.Update(product);
             return await SaveAsync();
         }

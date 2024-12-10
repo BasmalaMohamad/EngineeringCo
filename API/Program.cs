@@ -93,17 +93,15 @@ catch (Exception ex)
 {
     logger.LogError(ex, ex.Message);
 }
-app.UseHttpsRedirection();
+
 app.UseStaticFiles();
+app.UseHttpsRedirection();
 app.UseCors("CorsPolicy");
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
-
 app.MapControllers();
 
-app.UseStaticFiles();
 
 app.Run();
  
