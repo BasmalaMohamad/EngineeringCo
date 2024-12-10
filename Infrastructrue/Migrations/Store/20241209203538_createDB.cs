@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Infrastructrue.Migrations
+namespace Infrastructrue.Migrations.Store
 {
     /// <inheritdoc />
     public partial class createDB : Migration

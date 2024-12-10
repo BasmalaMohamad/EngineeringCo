@@ -71,8 +71,7 @@ namespace Infrastructrue.Data
 
             if (accessoriesParams.sortBy.ToLower() == "name")
                 accessoriesParams.sortBy = AccesSortByOptions.Name;
-            if (accessoriesParams.sortBy.ToLower() == "pumpname")
-                accessoriesParams.sortBy = AccesSortByOptions.PumpName;
+            
             if (accessoriesParams.sortBy.ToLower() == "size")
                 accessoriesParams.sortBy = AccesSortByOptions.Size;
             if (accessoriesParams.sortBy.ToLower() == "model")

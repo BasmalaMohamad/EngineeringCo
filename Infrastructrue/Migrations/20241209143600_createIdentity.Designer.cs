@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Infrastructrue.Migrations.AppIdentityDB
+namespace Infrastructrue.Migrations
 {
     [DbContext(typeof(AppIdentityDBContext))]
-    [Migration("20241203081016_createIdentity")]
+    [Migration("20241209143600_createIdentity")]
     partial class createIdentity
     {
         /// <inheritdoc />
