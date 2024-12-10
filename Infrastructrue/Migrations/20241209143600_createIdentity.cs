@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Infrastructrue.Migrations.AppIdentityDB
+namespace Infrastructrue.Migrations
 {
     /// <inheritdoc />
     public partial class createIdentity : Migration
