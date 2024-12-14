@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Newtonsoft.Json;
 
 namespace API.Controllers
 {
@@ -71,7 +72,8 @@ namespace API.Controllers
         [HttpPost]
         public async Task<bool> CreateProduct([FromQuery] ProductDTO productdto)
         {
-            if(!ModelState.IsValid)
+            Console.WriteLine(JsonConvert.SerializeObject(productdto));
+            if (!ModelState.IsValid)
             {
                 return false;
             }
@@ -98,7 +100,7 @@ namespace API.Controllers
                 return BadRequest("Invalid image file.");
             }
 
-            string uploadPath = Path.Combine(_environment.WebRootPath, "Images");
+            string uploadPath = Path.Combine(_environment.WebRootPath, "Images/Pumps");
             if (!Directory.Exists(uploadPath))
             {
                 Directory.CreateDirectory(uploadPath);
@@ -114,7 +116,7 @@ namespace API.Controllers
 
             // Return the URL of the uploaded image
             string fileUrl = $"{Request.Scheme}://{Request.Host}/Images/Pumps/{fileName}";
-            return Ok(new { url = fileUrl });
+            return Ok(fileUrl);
         }
 
         // Endpoint for uploading a document
@@ -141,10 +143,10 @@ namespace API.Controllers
             }
 
             // Simulate saving document ID in the database (this could be a real DB operation)
-            int documentId = new Random().Next(1, 10000);
+            // int documentId = new Random().Next(1, 10000);
 
-            // Return the document ID
-            return Ok(documentId);
+            string fileUrl = $"{Request.Scheme}://{Request.Host}/Docs/{fileName}";
+            return Ok(fileUrl);
         }
 
     }

@@ -13,7 +13,5 @@ namespace API.DTO
         public string Construction { get; set; }
         public int DocumentId { get; set; }
         public DocumentDTO Documentation { get; set; }
-
-
     }
 }
