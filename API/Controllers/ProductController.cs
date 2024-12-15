@@ -80,11 +80,11 @@ namespace API.Controllers
             var productMapped = _mapper.Map<Product>(productdto);
             return await _productRepository.AddProduct(productMapped);
         }
-        [HttpPut]
-        public async Task<ActionResult<Product>> UpdateProduct(int productID, ProductDTO productdto)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Product>> UpdateProduct(int id, ProductDTO productdto)
         {
             var productMapped = _mapper.Map<Product>(productdto);
-            return await _productRepository.EditProduct(productID, productMapped);
+            return await _productRepository.EditProduct(id, productMapped);
         }
         [HttpDelete("{id}")]
         public async Task DeleteProduct(int id)
@@ -115,7 +115,7 @@ namespace API.Controllers
             }
 
             // Return the URL of the uploaded image
-            string fileUrl = $"{Request.Scheme}://{Request.Host}/Images/Pumps/{fileName}";
+            string fileUrl = $"/Images/Pumps/{fileName}";
             return Ok(new { url = fileUrl });
         }
 
@@ -145,7 +145,7 @@ namespace API.Controllers
             // Simulate saving document ID in the database (this could be a real DB operation)
             // int documentId = new Random().Next(1, 10000);
 
-            string fileUrl = $"{Request.Scheme}://{Request.Host}/Docs/{fileName}";
+            string fileUrl = $"/Docs/{fileName}";
             return Ok(new { url = fileUrl });
         }
 
