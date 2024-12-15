@@ -24,24 +24,36 @@ namespace Infrastructrue.Data
             _mapper = mapper;
         }
 
-        public async Task<bool> AddAccessory(Accessories accessory)
+        public async Task<Accessories> AddAccessory(Accessories accessory)
         {
             _storeContext.Accessories.Add(accessory);
-            return await SaveAsync();
+            _storeContext.SaveChangesAsync();
+            return accessory;
         }
-
+      
         public async Task<int> CountAsync()
         {
             return await _storeContext.Accessories.Include(p => p.Category)
                .CountAsync();
         }
 
-        public async Task<bool> EditAccessory(Accessories accessory)
+        public async Task<Accessories> EditAccessory(int id , Accessories updatedaccessory)
         {
-            _storeContext.Accessories.Update(accessory);
-            return await SaveAsync();
-        }
+            var accessory = _storeContext.Accessories.Find(id);
+            accessory.Name=updatedaccessory.Name;
+            accessory.Size = updatedaccessory.Size;
+            accessory.Category.Name = updatedaccessory.Category.Name;
+            accessory.Category.Id=updatedaccessory.Category.Id;
+            accessory.ImageURL=updatedaccessory.ImageURL;
+            accessory.PumpName=updatedaccessory.PumpName;
+            accessory.Model=updatedaccessory.Model;
+            accessory.Construction=updatedaccessory.Construction;
 
+
+            _storeContext.SaveChangesAsync();
+            return accessory;
+        }
+       
         public async Task<IReadOnlyList<Accessories>> GetAccessoriesAsync()
         {
             return await _storeContext.Accessories.Include(p => p.Category)
@@ -102,12 +114,18 @@ namespace Infrastructrue.Data
             return name;
         }
 
-        public async Task<bool> RemoveAccessory(int id)
+        public async Task RemoveAccessory(int id)
         {
-            var accessory = _storeContext.Accessories.FirstOrDefault(p => p.Id == id);
+            var accessory = _storeContext.Accessories.Find(id);
+            if(accessory == null)
+            {
+                return;
+            }
             _storeContext.Accessories.Remove(accessory);
-            return await SaveAsync();
+            _storeContext.SaveChanges();
+
         }
+       
         public async Task<bool> SaveAsync()
         {
             var saved = await _storeContext.SaveChangesAsync();
