@@ -107,7 +107,7 @@ namespace Infrastructrue.Data
 
         public async Task RemoveProduct(int id)
         {
-            var product = _storeContext.Products.Find(id);
+            var product = await GetProductByIdAsync(id);
             if (product == null)
             {
                 return;
@@ -120,13 +120,13 @@ namespace Infrastructrue.Data
 
         public async Task<Product> EditProduct(int productID, Product updatedproduct)
         {
-            var product = _storeContext.Products.Find(productID);
+            var product = await GetProductByIdAsync(productID);
             product.ProductName = updatedproduct.ProductName;
+            product.Model = updatedproduct.Model;
             product.OutletSize = updatedproduct.OutletSize;
             product.InletSize = updatedproduct.InletSize;
             product.Construction = updatedproduct.Construction;
             product.ImageURL = updatedproduct.ImageURL;
-            product.Documentation.DocumentID = updatedproduct.Documentation.DocumentID;
             product.Documentation.FileURL = updatedproduct.Documentation.FileURL;
             _storeContext.SaveChangesAsync();
             return product;
