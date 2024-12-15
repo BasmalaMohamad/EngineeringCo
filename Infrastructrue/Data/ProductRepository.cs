@@ -101,7 +101,7 @@ namespace Infrastructrue.Data
         public async Task<Product> AddProduct(Product product)
         {
             _storeContext.Products.Add(product);
-            _storeContext.SaveChangesAsync();
+            await _storeContext.SaveChangesAsync();
             return product; 
         }
 

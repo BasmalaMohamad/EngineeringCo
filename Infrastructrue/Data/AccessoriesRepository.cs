@@ -27,7 +27,7 @@ namespace Infrastructrue.Data
         public async Task<Accessories> AddAccessory(Accessories accessory)
         {
             _storeContext.Accessories.Add(accessory);
-            _storeContext.SaveChangesAsync();
+            await _storeContext.SaveChangesAsync();
             return accessory;
         }
       
