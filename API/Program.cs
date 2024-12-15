@@ -44,7 +44,6 @@ builder.Services.AddScoped<IAccessoryRepository, AccessoriesRepository>();
 builder.Services.AddScoped<ITokenService, JWTTokenService>();
 
 builder.Services.AddDbContext<AppIdentityDBContext>(opt =>
-
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
 });

@@ -18,9 +18,9 @@ namespace Core.Interfaces
         Task<string> GetProductNameAsync(int productId);
         Task<IReadOnlyList<Product>> GetProductsAsync();
         Task<IReadOnlyList<Product>> GetProductsWithSpecificationsAsync(ProductSpecParams productParams);
-        Task<bool> AddProduct(Product product);
-        Task<bool> RemoveProduct(int id);
-        Task<bool> EditProduct(Product product);
+        Task<Product> AddProduct(Product product);
+        Task RemoveProduct(int id);
+        Task<Product> EditProduct(int productID, Product product);
 
     }
 }

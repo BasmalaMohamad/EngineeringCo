@@ -12,6 +12,7 @@ namespace API.DTO
         public float OutletSize { get; set; }
         public string Construction { get; set; }
         public int DocumentId { get; set; }
+        //public string FileUrl { get; set; }
         public DocumentDTO Documentation { get; set; }
     }
 }

@@ -98,23 +98,38 @@ namespace Infrastructrue.Data
             return products;
         }
 
-        public async Task<bool> AddProduct(Product product)
+        public async Task<Product> AddProduct(Product product)
         {
             _storeContext.Products.Add(product);
-            return await SaveAsync();
+            _storeContext.SaveChangesAsync();
+            return product; 
         }
 
-        public async Task<bool> RemoveProduct(int id)
+        public async Task RemoveProduct(int id)
         {
-            var product = _storeContext.Products.FirstOrDefault(p => p.ProductID == id);
+            var product = _storeContext.Products.Find(id);
+            if (product == null)
+            {
+                return;
+            }
+
             _storeContext.Products.Remove(product);
-            return await SaveAsync();
+            _storeContext.SaveChanges();
+
         }
 
-        public async Task<bool> EditProduct(Product product)
+        public async Task<Product> EditProduct(int productID, Product updatedproduct)
         {
-            _storeContext.Products.Update(product);
-            return await SaveAsync();
+            var product = _storeContext.Products.Find(productID);
+            product.ProductName = updatedproduct.ProductName;
+            product.OutletSize = updatedproduct.OutletSize;
+            product.InletSize = updatedproduct.InletSize;
+            product.Construction = updatedproduct.Construction;
+            product.ImageURL = updatedproduct.ImageURL;
+            product.Documentation.DocumentID = updatedproduct.Documentation.DocumentID;
+            product.Documentation.FileURL = updatedproduct.Documentation.FileURL;
+            _storeContext.SaveChangesAsync();
+            return product;
         }
         public async Task<bool> SaveAsync()
         {

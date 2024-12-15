@@ -70,26 +70,26 @@ namespace API.Controllers
             return Ok(docMapped);
         }
         [HttpPost]
-        public async Task<bool> CreateProduct([FromQuery] ProductDTO productdto)
+        public async Task<ActionResult<Product>> CreateProduct(ProductDTO productdto)
         {
-            Console.WriteLine(JsonConvert.SerializeObject(productdto));
+            // Console.WriteLine(JsonConvert.SerializeObject(productdto));
             if (!ModelState.IsValid)
             {
-                return false;
+                return BadRequest();
             }
             var productMapped = _mapper.Map<Product>(productdto);
             return await _productRepository.AddProduct(productMapped);
         }
         [HttpPut]
-        public async Task<bool> UpdateProduct([FromQuery] ProductDTO productdto)
+        public async Task<ActionResult<Product>> UpdateProduct(int productID, ProductDTO productdto)
         {
             var productMapped = _mapper.Map<Product>(productdto);
-            return await _productRepository.EditProduct(productMapped);
+            return await _productRepository.EditProduct(productID, productMapped);
         }
         [HttpDelete("{id}")]
-        public async Task<bool> DeleteProduct(int id)
+        public async Task DeleteProduct(int id)
         {
-            return await _productRepository.RemoveProduct(id);
+            await _productRepository.RemoveProduct(id);
         }
 
         [HttpPost("upload-image")]
@@ -116,7 +116,7 @@ namespace API.Controllers
 
             // Return the URL of the uploaded image
             string fileUrl = $"{Request.Scheme}://{Request.Host}/Images/Pumps/{fileName}";
-            return Ok(fileUrl);
+            return Ok(new { url = fileUrl });
         }
 
         // Endpoint for uploading a document
@@ -146,7 +146,7 @@ namespace API.Controllers
             // int documentId = new Random().Next(1, 10000);
 
             string fileUrl = $"{Request.Scheme}://{Request.Host}/Docs/{fileName}";
-            return Ok(fileUrl);
+            return Ok(new { url = fileUrl });
         }
 
     }
