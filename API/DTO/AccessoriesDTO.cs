@@ -10,7 +10,8 @@ namespace API.DTO
         public string ImageURL { get; set; } 
         public string Model { get; set; }
         public string Construction { get; set; }
-        public Category Category { get; set; }
+        
         public float Size { get; set; }
+        public CategoryDTO Category { get; set; }
     }
 }

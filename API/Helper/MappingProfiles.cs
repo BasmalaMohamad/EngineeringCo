@@ -22,6 +22,10 @@ namespace API.Helper
             CreateMap<Accessories, AccessoriesDTO>().
                  ForMember(d => d.ImageURL, o => o.MapFrom<AccessoriesUrlResolver>());
             CreateMap<AccessoriesDTO, Accessories>();
+            CreateMap<CategoryDTO, Category>();
+            CreateMap<Category, CategoryDTO>();
+
         }
+
     }
 }

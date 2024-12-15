@@ -23,7 +23,7 @@ namespace Core.Entities
         [ForeignKey("Documentation")]
         public int DocumentId { get; set; }
         public Documentation Documentation { get; set; } = null!;
-        public virtual List<Accessories> Accessories { get; set; } = new List<Accessories>();
+        
         public bool IsDeleted { get; set; }
        
 

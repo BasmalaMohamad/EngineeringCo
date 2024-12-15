@@ -17,8 +17,10 @@ namespace Core.Interfaces
         Task<string> GetAccessoryNameAsync(int id);
         Task<IReadOnlyList<Accessories>> GetAccessoriesAsync();
         Task<IReadOnlyList<Accessories>> GetAccessoriesWithSpecificationsAsync(AccessoriesSpecParams accessoriesParams);
-        Task<bool> AddAccessory(Accessories accessory);
-        Task<bool> RemoveAccessory(int id);
-        Task<bool> EditAccessory(Accessories accessory);
+        Task<Accessories> AddAccessory(Accessories accessory);
+        
+
+        Task RemoveAccessory(int id);
+        Task<Accessories> EditAccessory(int id , Accessories accessory);
     }
 }

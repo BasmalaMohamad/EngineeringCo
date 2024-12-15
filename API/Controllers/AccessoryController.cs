@@ -7,6 +7,7 @@ using Core.Specifications;
 using Infrastructrue.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace API.Controllers
 {
@@ -16,10 +17,13 @@ namespace API.Controllers
     {
         private readonly IAccessoryRepository _accessoryRepository;
         private readonly IMapper _mapper;
-        public AccessoryController(IAccessoryRepository accessoryRepository, IMapper mapper)
+        private readonly IWebHostEnvironment _environment;
+        public AccessoryController(IAccessoryRepository accessoryRepository, IMapper mapper, IWebHostEnvironment environment)
         {
             _accessoryRepository = accessoryRepository;
             _mapper = mapper;
+            _environment = environment;
+
         }
 
         [HttpGet]
@@ -54,28 +58,56 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<bool> CreateAccessory([FromQuery] AccessoriesDTO accessorydto)
+        public async Task<ActionResult<Accessories>> CreateAccessory( AccessoriesDTO accessorydto)
         {
             if (!ModelState.IsValid)
             {
-                return false;
+                return BadRequest();
             }
             var accessoryMapped = _mapper.Map<Accessories>(accessorydto);
             return await _accessoryRepository.AddAccessory(accessoryMapped);
         }
+    
         [HttpPut]
-        public async Task<bool> UpdateAccessory([FromQuery] int id, [FromQuery] AccessoriesSpecParams accessorydto)
+        public async Task<ActionResult<Accessories>> UpdateAccessory( int id,AccessoriesDTO accessorydto)
         {
             var accessoryMapped = _mapper.Map<Accessories>(accessorydto);
-            return await _accessoryRepository.EditAccessory(accessoryMapped);
+            return await _accessoryRepository.EditAccessory(id,accessoryMapped);
         }
-        [HttpDelete]
-        public async Task<bool> DeleteAccessory([FromQuery] int id)
+        [HttpDelete("{id}")]
+        public async Task DeleteAccessory(int id)
         {
-            return await _accessoryRepository.RemoveAccessory(id);
+             await _accessoryRepository.RemoveAccessory(id);
         }
+     
+      
 
 
+        [HttpPost("upload-image")]
+        public async Task<IActionResult> UploadImage(IFormFile image)
+        {
+            if (image == null || image.Length == 0)
+            {
+                return BadRequest("Invalid image file.");
+            }
 
+            string uploadPath = Path.Combine(_environment.WebRootPath, "Images/Parts");
+            if (!Directory.Exists(uploadPath))
+            {
+                Directory.CreateDirectory(uploadPath);
+            }
+
+            string fileName = $"{Guid.NewGuid()}{Path.GetExtension(image.FileName)}";
+            string filePath = Path.Combine(uploadPath, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await image.CopyToAsync(stream);
+            }
+
+            // Return the URL of the uploaded image
+            string fileUrl = $"{Request.Scheme}://{Request.Host}/Images/Parts/{fileName}";
+            return Ok(new { url = fileUrl });
+        }
     }
 }
