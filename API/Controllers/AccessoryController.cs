@@ -106,7 +106,7 @@ namespace API.Controllers
             }
 
             // Return the URL of the uploaded image
-            string fileUrl = $"{Request.Scheme}://{Request.Host}/Images/Parts/{fileName}";
+            string fileUrl = $"/Images/Parts/{fileName}";
             return Ok(new { url = fileUrl });
         }
     }

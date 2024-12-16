@@ -2,6 +2,7 @@
 using Core.Entities;
 using Core.Entities.Consts;
 using Core.Interfaces;
+using Core.Helpers;
 using Core.Specifications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
@@ -58,28 +59,23 @@ namespace Infrastructrue.Data
 
         public async Task<IReadOnlyList<Product>> GetProductsWithSpecificationsAsync(ProductSpecParams productParams)
         {
-            
+
             IQueryable<Product> query = _storeContext.Products.Include(p => p.Documentation);
+
             query = query.Where(p =>
-              (string.IsNullOrEmpty(productParams.SearchValue)
-                  ||
-                   p.ProductName.ToLower().Contains(productParams.SearchValue.ToLower()) ||
-                   p.Model.ToLower().Contains(productParams.SearchValue.ToLower()) ||
-                   p.Construction.ToLower().Contains(productParams.SearchValue.ToLower()))
-                  && (!productParams.documentId.HasValue || p.Documentation.DocumentID == productParams.documentId)
-                  && (string.IsNullOrEmpty(productParams.model) || p.Model.ToLower() == productParams.model.ToLower())
-
-                  && (!productParams.inletSizeFrom.HasValue || p.InletSize >= productParams.inletSizeFrom)
-                  && (!productParams.inletSizeTo.HasValue || p.InletSize <= productParams.inletSizeTo)
-                  && (!productParams.outletSizeTo.HasValue || p.OutletSize <= productParams.outletSizeTo)
-                  && (!productParams.outletSizeFrom.HasValue || p.OutletSize >= productParams.outletSizeFrom)
-                  && (string.IsNullOrEmpty(productParams.construction) || p.Construction == productParams.construction)
-     
-                  && (string.IsNullOrEmpty(productParams.productName) || p.ProductName == productParams.productName)
-                    // Use ToString() for enum comparison
-
-                );
-
+                (string.IsNullOrEmpty(productParams.SearchValue) ||
+                    p.ProductName.ToLower().Contains(productParams.SearchValue.ToLower()) ||
+                    p.Model.ToLower().Contains(productParams.SearchValue.ToLower()) ||
+                    p.Construction.ToLower().Contains(productParams.SearchValue.ToLower()))
+                && (!productParams.documentId.HasValue || p.Documentation.DocumentID == productParams.documentId)
+                && (string.IsNullOrEmpty(productParams.model) || p.Model.ToLower() == productParams.model.ToLower())
+                && (!productParams.inletSizeFrom.HasValue || p.InletSize >= productParams.inletSizeFrom)
+                && (!productParams.inletSizeTo.HasValue || p.InletSize <= productParams.inletSizeTo)
+                && (!productParams.outletSizeTo.HasValue || p.OutletSize <= productParams.outletSizeTo)
+                && (!productParams.outletSizeFrom.HasValue || p.OutletSize >= productParams.outletSizeFrom)
+                && (string.IsNullOrEmpty(productParams.construction) || p.Construction == productParams.construction)
+                && (string.IsNullOrEmpty(productParams.productName) || p.ProductName == productParams.productName)
+            );
 
             if (productParams.sortBy.ToLower() == "name")
                 productParams.sortBy = SortByOptions.Name;
@@ -88,14 +84,15 @@ namespace Infrastructrue.Data
             if (productParams.sortBy.ToLower() == "outlet")
                 productParams.sortBy = SortByOptions.Outlet;
 
+            // Apply dynamic sorting
             query = query.OrderBy($"{productParams.sortBy} {productParams.sortDirection}");
 
             var products = await query.Skip(productParams.PageSize * (productParams.PageIndex - 1))
-                                  .Take(productParams.PageSize)
-                                  .ToListAsync();
-
+                                      .Take(productParams.PageSize)
+                                      .ToListAsync();
 
             return products;
+
         }
 
         public async Task<Product> AddProduct(Product product)

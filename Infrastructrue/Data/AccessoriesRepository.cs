@@ -50,7 +50,7 @@ namespace Infrastructrue.Data
             accessory.Construction=updatedaccessory.Construction;
 
 
-            _storeContext.SaveChangesAsync();
+            await _storeContext.SaveChangesAsync();
             return accessory;
         }
        
