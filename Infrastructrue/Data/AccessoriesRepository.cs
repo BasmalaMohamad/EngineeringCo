@@ -37,20 +37,23 @@ namespace Infrastructrue.Data
                .CountAsync();
         }
 
+       
+
+       
         public async Task<Accessories> EditAccessory(int id , Accessories updatedaccessory)
         {
-            var accessory = _storeContext.Accessories.Find(id);
+            var accessory = await GetAccessoryByIdAsync(id);
             accessory.Name=updatedaccessory.Name;
             accessory.Size = updatedaccessory.Size;
             accessory.Category.Name = updatedaccessory.Category.Name;
-            accessory.Category.Id=updatedaccessory.Category.Id;
+            //accessory.Category.Id=updatedaccessory.Category.Id;
             accessory.ImageURL=updatedaccessory.ImageURL;
             accessory.PumpName=updatedaccessory.PumpName;
             accessory.Model=updatedaccessory.Model;
             accessory.Construction=updatedaccessory.Construction;
 
 
-            _storeContext.SaveChangesAsync();
+            await _storeContext.SaveChangesAsync();
             return accessory;
         }
        
@@ -77,6 +80,8 @@ namespace Infrastructrue.Data
                   && (string.IsNullOrEmpty(accessoriesParams.Construction) || p.Construction == accessoriesParams.Construction)
                   && (string.IsNullOrEmpty(accessoriesParams.PumpName) || p.PumpName == accessoriesParams.PumpName)
                   && (string.IsNullOrEmpty(accessoriesParams.Name) || p.Name == accessoriesParams.Name)
+                 
+
 
                 // Use ToString() for enum comparison
                 );
@@ -116,8 +121,8 @@ namespace Infrastructrue.Data
 
         public async Task RemoveAccessory(int id)
         {
-            var accessory = _storeContext.Accessories.Find(id);
-            if(accessory == null)
+            var accessory = await GetAccessoryByIdAsync(id);
+            if (accessory == null)
             {
                 return;
             }
@@ -125,7 +130,7 @@ namespace Infrastructrue.Data
             _storeContext.SaveChanges();
 
         }
-       
+   
         public async Task<bool> SaveAsync()
         {
             var saved = await _storeContext.SaveChangesAsync();

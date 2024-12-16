@@ -68,20 +68,20 @@ namespace API.Controllers
             return await _accessoryRepository.AddAccessory(accessoryMapped);
         }
     
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<ActionResult<Accessories>> UpdateAccessory( int id,AccessoriesDTO accessorydto)
         {
             var accessoryMapped = _mapper.Map<Accessories>(accessorydto);
             return await _accessoryRepository.EditAccessory(id,accessoryMapped);
         }
+        
         [HttpDelete("{id}")]
         public async Task DeleteAccessory(int id)
         {
              await _accessoryRepository.RemoveAccessory(id);
         }
-     
-      
 
+    
 
         [HttpPost("upload-image")]
         public async Task<IActionResult> UploadImage(IFormFile image)
@@ -106,7 +106,9 @@ namespace API.Controllers
             }
 
             // Return the URL of the uploaded image
-            string fileUrl = $"{Request.Scheme}://{Request.Host}/Images/Parts/{fileName}";
+            
+            string fileUrl = $"/Images/Parts/{fileName}";
+
             return Ok(new { url = fileUrl });
         }
     }
